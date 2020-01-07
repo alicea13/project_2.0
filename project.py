@@ -152,11 +152,11 @@ class HaveLogin:
                 pygame.draw.rect(screen, pygame.Color("blue"),
                                  (160, 160 + i * 70, 290, 53), 3)
 
-            screen.blit(self.text1, (100, 60))
-            screen.blit(self.text2, (435, 65))
-            screen.blit(self.text3, (x230, 170))
-            screen.blit(self.text4, (180, 240))
-            screen.blit(self.text5, (175, 310))
+            screen.blit(self.text1, (width // 6, height // 8.3))   # (100, 60)
+            screen.blit(self.text2, (width // 1.379, height // 7.69))   # (435, 65)
+            screen.blit(self.text3, (width // 2.6, height // 2.94))   # (230, 170)
+            screen.blit(self.text4, (width // 3, height // 2.08))   # (200, 240)
+            screen.blit(self.text5, (width // 3.42, height // 1.61))   # (175, 310)
             pygame.display.flip()
 
 
