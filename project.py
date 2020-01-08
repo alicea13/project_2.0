@@ -141,7 +141,7 @@ class HaveLogin:
                         # вывод топ 10 (?)
                         # Record()
 
-                    if 160 <= event.pos[0] <= 450 and 160 <= event.pos[1] <= 353:
+                    if 160 <= event.pos[0] <= 450 and 300 <= event.pos[1] <= 353:
                         print("back")
 
                         # выход к стартовому окну
@@ -170,6 +170,7 @@ class NoLogin:
         self.cur = self.con.cursor()
 
         self.log_app = self.cur.execute("""INSERT INTO logins(login) VALUES(?)""", (self.log,))
+        # self.main_app = self.cur.execute("""INSERT INTO Main(login) VALUES("me")""", (self.log,))
         self.con.commit()
 
         size = width, height = 600, 500
@@ -209,7 +210,7 @@ class NoLogin:
                         # вывод топ 10 (?)
                         # Record()
 
-                    if 160 <= event.pos[0] <= 450 and 160 <= event.pos[1] <= 353:
+                    if 160 <= event.pos[0] <= 450 and 300 <= event.pos[1] <= 353:
                         print("back")
 
                         # выход к стартовому окну
@@ -258,7 +259,6 @@ class NoLogin:
                         run_menu = False
                 screen.blit(self.titl, (100, 60))
             pygame.quit()
-
 
 start = StartWindow()
 
