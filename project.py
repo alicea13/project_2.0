@@ -397,7 +397,6 @@ class Menu:
         pygame.quit()
 
 
-<<<<<<< .merge_file_a04400
 class Board:
     # создание поля
     def __init__(self, screen, width, height, cell_count=10):
@@ -440,8 +439,6 @@ class Board:
         #print(self.board)
 
 
-=======
->>>>>>> .merge_file_a12116
 class Game:
     def __init__(self, login, mode, cell_count=10):
         print()
@@ -453,11 +450,7 @@ class Game:
         size = width, height = 800, 700
         screen = pygame.display.set_mode(size)
 
-<<<<<<< .merge_file_a04400
         board = Board(screen, width, height, cell_count)  # создаем поле
-=======
-        # board = Board(screen, width, height, cell_count)  # создаем поле
->>>>>>> .merge_file_a12116
         '''board.set_view(20, 20, 50)'''
         clock = pygame.time.Clock()
         # board = Snake(screen, width, height, cell_count)
@@ -501,17 +494,10 @@ class Game:
                     self.dir = "right"
 
             screen.fill((0, 0, 0))
-<<<<<<< .merge_file_a04400
             board.render()
             if ticks >= speed:
                 # if speed:
                     #board.next_move(self.dir, self.head_cell, self.end_cell, len, self.body_coord)
-=======
-            # board.render()
-            if ticks >= speed:
-                # if speed:
-                    # board.next_move(self.dir, self.head_cell, self.end_cell, len, self.body_coord)
->>>>>>> .merge_file_a12116
                 tick = 0
             pygame.display.flip()
             clock.tick(100)
