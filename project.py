@@ -404,7 +404,7 @@ class Board:
         self.width = width
         self.height = height
         # значения по умолчанию
-        self.cell_size = 30# (width - 120) // cell_count; width // int(cell_count)
+        self.cell_size = 30   # (width - 120) // cell_count; width // int(cell_count)
         size = width, height = 800, 700
         self.screen = screen
         self.cell_c = cell_count
@@ -432,11 +432,7 @@ class Board:
 
     def get_click(self, mouse_pos):
         cell = self.get_cell(mouse_pos)
-        #print(cell)
-        #print(self.board)
         self.board[cell[0]][cell[1]] = 1
-        #print()
-        #print(self.board)
 
 
 class Game:
@@ -454,13 +450,17 @@ class Game:
         '''board.set_view(20, 20, 50)'''
         clock = pygame.time.Clock()
         board = Snake(screen, width, height, cell_count)
-        running_game = True
 
+        running_game = True
+        snake_run = False
+
+        clock = pygame.time.Clock()
         ticks = 0
         speed = 10
-        speed_2 = 0
+        # speed_2 = 0
 
         self.dir = ''
+        self.curr_dir = ''
         self.len = 1
         self.body_coord = []
 
@@ -473,16 +473,26 @@ class Game:
                     running_game = False
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     board.get_click(event.pos)
-                    self.head_cell = event.pos
-                    self.end_cell = event.pos
-                    self.body_coord = [event.pos]
+                    if not self.body_coord:
+                        self.head_cell = list(board.get_cell(event.pos))
+                        self.end_cell = list(board.get_cell(event.pos))
+                        self.body_coord.append(list(board.get_cell(event.pos)))
+
+                    else:
+                        self.end_cell = list(board.get_cell(event.pos))
+                        self.body_coord.append(list(board.get_cell(event.pos)))
+                        self.len += 1
+                    print(f'head {self.head_cell}')
+                    print(f'end {self.end_cell}')
+                    print(f'body {self.body_coord}')
                 if (event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE or
                         event.type == pygame.MOUSEBUTTONDOWN and event.button == 3):
-                    if speed != 0:
+                    snake_run = not snake_run
+                    '''if speed != 0:
                         speed_2 = speed
                         speed = 0
                     else:
-                        speed = speed_2
+                        speed = speed_2'''
 
                 if (event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN):
                     self.dir = "down"
@@ -496,8 +506,9 @@ class Game:
             screen.fill((0, 0, 0))
             board.render()
             if ticks >= speed:
-                if speed:
-                    board.next_move(self.dir, self.head_cell, self.end_cell, len, self.body_coord)
+                if snake_run:
+                    print(self.dir)
+                    board.next_move(self.dir, self.curr_dir, self.head_cell, self.end_cell, self.len, self.body_coord)
                 tick = 0
             pygame.display.flip()
             clock.tick(100)
@@ -526,28 +537,38 @@ class Snake(Board):
                                   self.top + self.cell_size * y,
                                   self.cell_size, self.cell_size), 1)
 
-    def next_move(self, dir, head, end, len, body):
+    def next_move(self, dir, curr_dir, head, end, len, body):
         temp = copy.deepcopy(self.board)  # сохраняем поле для дальнейшего изменения текущего
-        for x in range(self.width):
-            for y in range(self.height):
-                '''count = 0
-                for dx in range(-1, 2):
-                    for dy in range(-1, 2):
-                        if (x + dx < 0 or y + dy < 0
-                                or x + dx >= self.width or y + dy >= self.height):
-                            continue
-                        else:
-                            count += self.board[y + dy][x + dx]
-                count -= self.board[y][x]
-                if count == 3:
-                    temp[y][x] = 1
-                elif count < 2 or count > 3:
-                    temp[y][x] = 0'''
+        if dir != curr_dir:
+            for x in range(self.width):
+                for y in range(self.height):
+                    if dir == "right" and self.board[head[0] + 1][head[1]] == 0:
+                        continue
+                    if dir == "left" and self.board[head[0] - 1][head[1]] == 0:
+                        continue
+                    if dir == "up" and self.board[head[0]][head[1] - 1] == 0:
+                        continue
+                    if dir == "down" and self.board[head[0] + 1][head[1]] == 0:
+                        continue
+                    '''# count = 0
+                    for dx in range(-1, 2):
+                        for dy in range(-1, 2):
+                            if (x + dx < 0 or y + dy < 0
+                                    or x + dx >= self.width or y + dy >= self.height):
+                                continue
+                            else:
+                                # count += self.board[y + dy][x + dx]
+                    count -= self.board[y][x]
+                    if count == 3:
+                        temp[y][x] = 1
+                    elif count < 2 or count > 3:
+                        temp[y][x] = 0
         if dir == "right":
             for i in range(len):
                 for j in range(len):
-                    self.board[body[i + 1]][body[j + 1]] = 1
+                    self.board[body[i + 1]][body[j + 1]] = 1'''
         self.board = copy.deepcopy(temp)
+
 
 
 start = StartWindow()
