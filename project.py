@@ -453,7 +453,7 @@ class Game:
         board = Board(screen, width, height, cell_count)  # создаем поле
         '''board.set_view(20, 20, 50)'''
         clock = pygame.time.Clock()
-        # board = Snake(screen, width, height, cell_count)
+        board = Snake(screen, width, height, cell_count)
         running_game = True
 
         ticks = 0
@@ -496,13 +496,58 @@ class Game:
             screen.fill((0, 0, 0))
             board.render()
             if ticks >= speed:
-                # if speed:
-                    #board.next_move(self.dir, self.head_cell, self.end_cell, len, self.body_coord)
+                if speed:
+                    board.next_move(self.dir, self.head_cell, self.end_cell, len, self.body_coord)
                 tick = 0
             pygame.display.flip()
             clock.tick(100)
             ticks += 1
         pygame.quit()
+
+
+class Snake(Board):
+    def __init__(self, screen, width, height, cell_count=10):
+        super().__init__(screen, width, height, cell_count)
+        self.screen = screen
+
+        self.cell_c = cell_count
+
+    def render(self):
+        for x in range(self.cell_c):
+            for y in range(self.cell_c):
+                if self.board[y][x] == 1:
+                    pygame.draw.rect(self.screen, pygame.Color("yellow"),
+                                     (self.left + self.cell_size * x,
+                                      self.top + self.cell_size * y,
+                                      self.cell_size, self.cell_size))
+                # отрисовываем решетку поля
+                pygame.draw.rect(self.screen, pygame.Color("blue"),
+                                 (self.left + self.cell_size * x,
+                                  self.top + self.cell_size * y,
+                                  self.cell_size, self.cell_size), 1)
+
+    def next_move(self, dir, head, end, len, body):
+        temp = copy.deepcopy(self.board)  # сохраняем поле для дальнейшего изменения текущего
+        for x in range(self.width):
+            for y in range(self.height):
+                '''count = 0
+                for dx in range(-1, 2):
+                    for dy in range(-1, 2):
+                        if (x + dx < 0 or y + dy < 0
+                                or x + dx >= self.width or y + dy >= self.height):
+                            continue
+                        else:
+                            count += self.board[y + dy][x + dx]
+                count -= self.board[y][x]
+                if count == 3:
+                    temp[y][x] = 1
+                elif count < 2 or count > 3:
+                    temp[y][x] = 0'''
+        if dir == "right":
+            for i in range(len):
+                for j in range(len):
+                    self.board[body[i + 1]][body[j + 1]] = 1
+        self.board = copy.deepcopy(temp)
 
 
 start = StartWindow()
