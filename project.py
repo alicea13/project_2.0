@@ -149,17 +149,20 @@ class HaveLogin:
                         # выход к стартовому окну
                         StartWindow()
                         run_havelog = False
-            screen.fill((30, 30, 30))
-            for i in range(3):
-                pygame.draw.rect(screen, pygame.Color("blue"),
-                                 (160, 160 + i * 70, 290, 53), 3)
+            if run_havelog:
+                screen.fill((30, 30, 30))
+                for i in range(3):
+                    pygame.draw.rect(screen, pygame.Color("blue"),
+                                     (160, 160 + i * 70, 290, 53), 3)
 
-            screen.blit(self.text1, (width // 6, height // 8.3))   # (100, 60)
-            screen.blit(self.text2, (width // 1.379, height // 7.69))   # (435, 65)
-            screen.blit(self.text3, (width // 2.6, height // 2.94))   # (230, 170)
-            screen.blit(self.text4, (width // 3, height // 2.08))   # (200, 240)
-            screen.blit(self.text5, (width // 3.42, height // 1.61))   # (175, 310)
-            pygame.display.flip()
+                screen.blit(self.text1, (width // 6, height // 8.3))   # (100, 60)
+                screen.blit(self.text2, (width // 1.379, height // 7.69))   # (435, 65)
+                screen.blit(self.text3, (width // 2.6, height // 2.94))   # (230, 170)
+                screen.blit(self.text4, (width // 3, height // 2.08))   # (200, 240)
+                screen.blit(self.text5, (width // 3.42, height // 1.61))   # (175, 310)
+                pygame.display.flip()
+
+        pygame.quit()
 
 
 class NoLogin:
@@ -223,7 +226,7 @@ class NoLogin:
                 for i in range(3):
                     pygame.draw.rect(screen, pygame.Color("blue"),
                                      (160, 160 + i * 70, 290, 53), 3)
-
+            if run_nolog:
                 screen.blit(self.text1, (width // 6, height // 8.3))  # (100, 60)
                 screen.blit(self.text2, (width // 1.379, height // 7.69))  # (435, 65)
                 screen.blit(self.text3, (width // 2.6, height // 2.94))  # (230, 170)
@@ -367,33 +370,34 @@ class Menu:
                     if 40 <= event.pos[0] <= 560 and 420 <= event.pos[1] <= 475:
                         print("play")
                         Game(self.login, self.game_mode, board_size)
+            if run_menu:
+                screen.fill((0, 0, 0))
+                for i in range(3):
+                    pygame.draw.rect(screen, pygame.Color(self.list_size[i][0]),
+                                     (100 + i * 165, 165, 70, 50), self.list_size[i][1])
 
-            screen.fill((0, 0, 0))
-            for i in range(3):
-                pygame.draw.rect(screen, pygame.Color(self.list_size[i][0]),
-                                 (100 + i * 165, 165, 70, 50), self.list_size[i][1])
+                    screen.blit(self.size_list[i], (110 + i * 165, 180))
 
-                screen.blit(self.size_list[i], (110 + i * 165, 180))
+                    pygame.draw.rect(screen, pygame.Color(self.list_mode[i][0]),
+                                     (90 + i * 150, 295, 120, 50 ),
+                                     self.list_mode[i][1])
+                    screen.blit(self.mode_list[i], (100 + i * 166, 310))
 
-                pygame.draw.rect(screen, pygame.Color(self.list_mode[i][0]),
-                                 (90 + i * 150, 295, 120, 50 ),
-                                 self.list_mode[i][1])
-                screen.blit(self.mode_list[i], (100 + i * 166, 310))
+                screen.blit(self.titl, (width // 4.28, height // 10))   # (140, 50)
+                screen.blit(self.t_size, (width // 12, height // 4.16))   # (50, 120)
+                screen.blit(self.t_mode, (width // 12, height // 2))   # (50, 250)
+                screen.blit(self.t_char, (width // 12, height // 1.315))   # (50, 380)
+                pygame.draw.rect(screen, pygame.Color("blue"),
+                                 (width // 1.71, height // 1.35, width // 3.15,
+                                  height // 12.5), 3)   # (350, 370, 190, 60)
+                screen.blit(self.ch, (width // 1.538, height // 1.315))   # (390, 380)
+                screen.blit(self.play, (width // 2.3, height // 1.162))   # (260, 430)
+                pygame.draw.rect(screen, pygame.Color("blue"),
+                                 (width // 15, height // 1.19, width // 1.153,
+                                  height // 9), 3)   # (40, 420, 520, 55)
 
-            screen.blit(self.titl, (width // 4.28, height // 10))   # (140, 50)
-            screen.blit(self.t_size, (width // 12, height // 4.16))   # (50, 120)
-            screen.blit(self.t_mode, (width // 12, height // 2))   # (50, 250)
-            screen.blit(self.t_char, (width // 12, height // 1.315))   # (50, 380)
-            pygame.draw.rect(screen, pygame.Color("blue"),
-                             (width // 1.71, height // 1.35, width // 3.15,
-                              height // 12.5), 3)   # (350, 370, 190, 60)
-            screen.blit(self.ch, (width // 1.538, height // 1.315))   # (390, 380)
-            screen.blit(self.play, (width // 2.3, height // 1.162))   # (260, 430)
-            pygame.draw.rect(screen, pygame.Color("blue"),
-                             (width // 15, height // 1.19, width // 1.153,
-                              height // 9), 3)   # (40, 420, 520, 55)
+                pygame.display.flip()
 
-            pygame.display.flip()
         pygame.quit()
 
 
@@ -430,14 +434,28 @@ class Board:
         else:
             return None
 
-    def get_click(self, mouse_pos):
+    def get_click(self, mouse_pos, end_snake, body_coord):
         cell = self.get_cell(mouse_pos)
-        self.board[cell[0]][cell[1]] = 1
+        print()
+        print(f' end {end_snake}')
+        print(f'cell {cell}')
+        print(f'body {body_coord}')
+        print()
+        if cell:
+            if not body_coord:
+                self.board[cell[0]][cell[1]] = 1
+            else:
+                print()
+                print(abs(end_snake[0] - cell[0]) == 0 and abs(end_snake[1] - cell[1]) == 1)
+                print(abs(end_snake[0] - cell[0]) == 1 and abs(end_snake[1] - cell[1]) == 0)
+                print()
+                if abs((end_snake[0] - cell[0]) == 0 and abs(end_snake[1] - cell[1]) == 1) or (abs(end_snake[0] - cell[0]) == 1 and abs(end_snake[1] - cell[1]) == 0):
+                    self.board[cell[0]][cell[1]] = 1
+        return cell
 
 
 class Game:
     def __init__(self, login, mode, cell_count=10):
-        print()
         print("mode", mode)
         print("login", login)
         print("cell_count", cell_count)
@@ -472,19 +490,33 @@ class Game:
                 if event.type == pygame.QUIT:
                     running_game = False
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    board.get_click(event.pos)
+                    board.get_click(event.pos, self.end_cell, self.body_coord)
+                    #print(f'res {board.get_click(event.pos, self.end_cell, self.body_coord)}')
+                    #print(board.get_cell(event.pos))
+                    print(f'body {self.body_coord}')
+                    print(not self.body_coord)
+
                     if not self.body_coord:
+                        print("here")
                         self.head_cell = list(board.get_cell(event.pos))
                         self.end_cell = list(board.get_cell(event.pos))
                         self.body_coord.append(list(board.get_cell(event.pos)))
+                        board.get_click(event.pos, self.end_cell, self.body_coord)
 
                     else:
-                        self.end_cell = list(board.get_cell(event.pos))
-                        self.body_coord.append(list(board.get_cell(event.pos)))
-                        self.len += 1
-                    print(f'head {self.head_cell}')
-                    print(f'end {self.end_cell}')
-                    print(f'body {self.body_coord}')
+                        print("tut")
+                        print(board.get_cell(event.pos))
+                        #print(f'abs {abs(self.end_cell[0] - board.get_cell(event.pos)[0]) == 1, abs(self.end_cell[1] - board.get_cell(event.pos)[1]) == 1}')
+                        #if abs(self.end_cell[0] - event.pos[0]) == 1 or abs(self.end_cell[1] - event.pos[1]) == 1:
+                        if board.get_click(event.pos, self.end_cell, self.body_coord):
+                            self.end_cell = list(board.get_cell(event.pos))
+                            self.body_coord.append(list(board.get_cell(event.pos)))
+                            self.len += 1
+
+                    #print(f'head {self.head_cell}')
+                    #print(f'end {self.end_cell}')
+                    #print(f'body {self.body_coord}')
+                    #print(not self.body_coord)
                 if (event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE or
                         event.type == pygame.MOUSEBUTTONDOWN and event.button == 3):
                     snake_run = not snake_run
