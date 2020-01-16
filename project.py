@@ -117,7 +117,7 @@ class HaveLogin:
         self.text1 = titl.render("Добро пожаловать,", 1, pygame.Color("blue"))
 
         log = pygame.font.SysFont('colibri', 50)
-        self.text2 = log.render(login, 1, pygame.Color('lightblue'))   # login.rjust((width - 435) % 8, " ")
+        self.text2 = log.render(login, 1, pygame.Color('lightblue'))
 
         act_open = pygame.font.SysFont("arial", 25)
         self.text3 = act_open.render(f"Начать игру", 1, pygame.Color("lightblue"))
