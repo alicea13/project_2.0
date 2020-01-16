@@ -55,6 +55,7 @@
     <option name="width" value="1300" />
     <option name="height" value="1010" />
   </component>
+  <component name="ProjectId" id="1WTPfTJ81HtiTGPdRdbRgMzoUdT" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -234,9 +235,29 @@
     <option name="LAST_COMMIT_MESSAGE" value="Доработка класса Game, Snake" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="437" height="272" key="Git.Branch.Popup" />
-    <state width="437" height="272" key="Git.Branch.Popup/1920.1080" />
-    <state width="437" height="272" key="Git.Branch.Popup@1920.1080@120dpi" />
+    <state width="437" height="272" key="Git.Branch.Popup" timestamp="1579170857847" />
+    <state width="437" height="272" key="Git.Branch.Popup/1920.1080" timestamp="1579170857847" />
+    <state width="437" height="272" key="Git.Branch.Popup@1920.1080@120dpi" timestamp="1579170857847" />
+    <state width="938" height="280" key="GridCell.Tab.0.bottom" timestamp="1579170897628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579170897628" />
+    <state width="938" height="280" key="GridCell.Tab.0.center" timestamp="1579170897628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579170897628" />
+    <state width="938" height="280" key="GridCell.Tab.0.left" timestamp="1579170897628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579170897628" />
+    <state width="938" height="280" key="GridCell.Tab.0.right" timestamp="1579170897628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579170897628" />
+    <state x="685" y="311" key="git4idea.merge.GitPullDialog" timestamp="1579170909900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="685" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579170909900" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/01.py" />
