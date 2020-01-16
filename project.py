@@ -54,14 +54,11 @@ class InputText:
         self.exit = ex
         self.color = color
 
-        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
-
         self.con = sqlite3.connect("one_little_worm.db")
         self.cur = self.con.cursor()
 
     def events(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
-            self.sound.play()
             self.color = "blue"
             if self.rect.collidepoint(event.pos):
                 self.run_text = True
@@ -111,7 +108,6 @@ class HaveLogin:
         size = width, height = 600, 500
         screen = pygame.display.set_mode(size)
 
-        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
 
         titl = pygame.font.SysFont('arial', 36)
         self.text1 = titl.render("Добро пожаловать,", 1, pygame.Color("blue"))
@@ -136,7 +132,7 @@ class HaveLogin:
                 if event.type == pygame.QUIT:
                     run_havelog = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    self.sound.play()
+
                     if 160 <= event.pos[0] <= 450 and 160 <= event.pos[1] <= 213:
                         print("game")
 
@@ -177,8 +173,6 @@ class NoLogin:
         self.con = sqlite3.connect("one_little_worm.db")
         self.cur = self.con.cursor()
 
-        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
-
         self.log_app = self.cur.execute("""INSERT INTO logins(login) VALUES(?)""", (self.log,))
         self.main_app = self.cur.execute("""INSERT INTO Main(login) VALUES(?)""", (self.log,))
         self.con.commit()
@@ -208,7 +202,6 @@ class NoLogin:
                 if event.type == pygame.QUIT:
                     run_nolog = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    self.sound.play()
                     if 160 <= event.pos[0] <= 450 and 160 <= event.pos[1] <= 213:
                         print("game")
 
@@ -252,8 +245,6 @@ class Menu:
         self.login = log
         size = width, height = 600, 500
         screen = pygame.display.set_mode(size)
-
-        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
 
         text_before = pygame.font.SysFont("arial", 36)
         self.titl = text_before.render("Перед началом игры", 1, pygame.Color("blue"))
@@ -309,7 +300,7 @@ class Menu:
                 if event.type == pygame.QUIT:
                     run_menu = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    self.sound.play()
+
                     if 100 <= event.pos[0] <= 170 and 165 <= event.pos[1] <= 215:
                         #print(10)
                         board_size = 10
@@ -457,10 +448,7 @@ class Game:
         size = width, height = 800, 700
         screen = pygame.display.set_mode(size)
 
-        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
-
         board = Board(screen, width, height, cell_count)  # создаем поле
-        '''board.set_view(20, 20, 50)'''
         clock = pygame.time.Clock()
         board = Snake(screen, width, height, cell_count)
 
@@ -485,7 +473,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     running_game = False
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    self.sound.play()
+
                     board.get_click(event.pos)
                     if not self.body_coord:
                         self.head_cell = list(board.get_cell(event.pos))
@@ -620,15 +608,6 @@ class Snake(Board):
         self.board = copy.deepcopy(temp)
 
 
-def music():
-    pygame.init()
-    music_sp = ["music/melody_1.mp3", "music/melody_2.mp3",
-                "music/melody_3.mp3", "music/melody_4.mp3"]
-    pygame.mixer.music.load(random.choice(music_sp))
-    pygame.mixer.music.play()
-
-
-music()
 start = StartWindow()
 
 
