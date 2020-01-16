@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="195f207f-8159-4557-aa0e-ded325906daa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/one_little_worm.db" beforeDir="false" afterPath="$PROJECT_DIR$/one_little_worm.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="592" column="25" selection-start-line="592" selection-start-column="25" selection-end-line="592" selection-end-column="25" />
+            <state relative-caret-position="120">
+              <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -39,7 +38,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev/7" />
       </map>
     </option>
   </component>
@@ -154,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578955871771</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Доработка класса Game, Snake">
+      <created>1579132960267</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579132960267</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -166,14 +172,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49504295" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49438202" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49636483" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4976867" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4970258" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.504957" side_tool="true" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.505618" side_tool="true" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -228,32 +234,16 @@
     <option name="LAST_COMMIT_MESSAGE" value="Доработка класса Game, Snake" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="429" height="265" key="Git.Branch.Popup" />
-    <state width="429" height="265" key="Git.Branch.Popup/1920.1080" />
-    <state width="429" height="265" key="Git.Branch.Popup@1920.1080@120dpi" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/project.py</url>
-          <line>604</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/project.py</url>
-          <line>586</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="437" height="272" key="Git.Branch.Popup" />
+    <state width="437" height="272" key="Git.Branch.Popup/1920.1080" />
+    <state width="437" height="272" key="Git.Branch.Popup@1920.1080@120dpi" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/01.py" />
     <entry file="file://$PROJECT_DIR$/project.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="592" column="25" selection-start-line="592" selection-start-column="25" selection-end-line="592" selection-end-column="25" />
+        <state relative-caret-position="120">
+          <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
