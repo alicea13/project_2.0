@@ -180,7 +180,7 @@ class NoLogin:
         self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
 
         self.log_app = self.cur.execute("""INSERT INTO logins(login) VALUES(?)""", (self.log,))
-        self.main_app = self.cur.execute("""INSERT INTO Main(login) VALUES(?)""", (self.log,))
+#        self.main_app = self.cur.execute("""INSERT INTO Main(login) VALUES(?)""", (self.log,))
         self.con.commit()
 
         size = width, height = 600, 500
@@ -503,35 +503,42 @@ class Game:
                         event.type == pygame.MOUSEBUTTONDOWN and event.button == 3):
                     snake_run = not snake_run
 
-                if (event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN) and self.l_dir is None:
-                    print("oooooooooooooooo")
-                    self.c_dir = "down"
-                    self.l_dir = "down"
-                    print(self.c_dir)
-                '''else:
-                    if self.c_dir != "down":
-                        self.c_dir = "down"'''
+                #if (event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN) and self.l_dir is None:
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN):
+                    if self.l_dir is None:
+                        self.c_dir = "down"
+                        self.l_dir = "down"
+                        print(self.c_dir)
+                    else:
+                        if self.c_dir != "down":
+                            self.c_dir = "down"
 
-                if (event.type == pygame.KEYDOWN and event.key == pygame.K_UP) and not self.l_dir:
-                    self.c_dir = "up"
-                    self.l_dir = "up"
-                else:
-                    if self.c_dir != "up":
+                #if (event.type == pygame.KEYDOWN and event.key == pygame.K_UP) and not self.l_dir:
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_UP):
+                    if self.l_dir is None:
                         self.c_dir = "up"
+                        self.l_dir = "up"
+                    else:
+                        if self.c_dir != "up":
+                            self.c_dir = "up"
 
-                if (event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT) and not self.l_dir:
-                    self.c_dir = "left"
-                    self.l_dir = "left"
-                else:
-                    if self.c_dir != "left":
+                #if (event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT) and not self.l_dir:
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT):
+                    if self.l_dir is None:
                         self.c_dir = "left"
+                        self.l_dir = "left"
+                    else:
+                        if self.c_dir != "left":
+                            self.c_dir = "left"
 
-                if (event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT) and not self.l_dir:
-                    self.c_dir = "right"
-                    self.l_dir = "right"
-                else:
-                    if self.c_dir != "right":
+                #if (event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT) and not self.l_dir:
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT):
+                    if self.l_dir is None:
                         self.c_dir = "right"
+                        self.l_dir = "right"
+                    else:
+                        if self.c_dir != "right":
+                            self.c_dir = "right"
 
             screen.fill((0, 0, 0))
             board.render()
@@ -581,10 +588,10 @@ class Snake(Board):
                                   self.top + self.cell_size * y,
                                   self.cell_size, self.cell_size), 1)
 
-    def next_move(self, l_dir, head, end, len, body, cell, c_dir="right"):
+    def next_move(self, l_dir, head, end, len, body, cell, c_dir='right'):
         x_cd, y_cd = head
         temp = copy.deepcopy(self.board)  # сохраняем поле для дальнейшего изменения текущего
-
+        print(c_dir)
         #print(body[-1][0])
         #print(head)
         #print()
@@ -594,7 +601,7 @@ class Snake(Board):
         for x in range(self.width):
             for y in range(self.height):
 
-                if y_cd < cell - 1:
+                if -1 < y_cd < cell - 1 and -1 < x_cd < cell - 1:
                     if c_dir == "right" and temp[x_cd][y_cd + 1] == 0:
                         for i in range(len):
 
@@ -606,17 +613,32 @@ class Snake(Board):
                         for j in range(len):
                             body[j][1] += 1
 
-                if c_dir == "left" and self.board[x_cd][y_cd - 1] == 0:
-                    temp[x_cd][y_cd - 1] = 1
-                    temp[x_cd][y_cd] = 0
+                    if c_dir == "left" and temp[x_cd][y_cd - 1] == 0:
+                        for i in range(len):
+                            print(temp[body[i][0]][body[i][1] - 1])
+                            print(temp[body[-1][0]][body[-1][1]])
+                            #temp[body[i][0]][body[i][1] - 1] = 1
+                            #temp[body[-1][0]][body[-1][1]] = 0
 
-                if c_dir == "up" and self.board[head[0] - 1][head[1]] == 0:
-                    temp[x_cd - 1][y_cd] = 1
-                    temp[x_cd][y_cd] = 0
+                        for j in range(len):
+                            body[j][1] += 1
 
-                if c_dir == "down" and self.board[head[0] + 1][head[1]] == 0:
-                    temp[x_cd + 1][y_cd] = 1
-                    temp[x_cd][y_cd] = 0
+                    if c_dir == "up" and temp[head[0] - 1][head[1]] == 0:
+                        for i in range(len):
+
+                            temp[body[i][0] - 1][body[i][1]] = 1
+                            temp[body[-1][0]][body[-1][1]] = 0
+                        for j in range(len):
+                            body[j][0] += 1
+
+                    if c_dir == "down" and temp[head[0] + 1][head[1]] == 0:
+                        for i in range(len):
+                            temp[body[i][0] + 1][body[i][1]] = 1
+                            temp[body[-1][0]][body[-1][1]] = 0
+
+                        for j in range(len):
+                            body[j][0] += 1
+
         self.board = copy.deepcopy(temp)
 
 
