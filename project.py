@@ -630,3 +630,4 @@ class Music:
 start = StartWindow()
 snake = Snake()
 food = Food()
+
