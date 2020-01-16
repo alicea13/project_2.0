@@ -517,49 +517,6 @@ class Game:
 
 
 
-
-class Bang(Board):
-    # тут будет таймер, по которому бомбочка взрывается
-    '''class Life(Board):
-    def __init__(self, width, height, left=10, top=10, cell_size=50):
-        super().__init__(width, height, left, top, cell_size)
-
-    def on_click(self, cell_coords):
-        self.board[cell_coords[0]][cell_coords[1]] = \
-            (self.board[cell_coords[0]][cell_coords[1]] + 1) % 2
-
-    def render(self):
-        for x in range(self.width):
-            for y in range(self.height):
-                if self.board[y][x]:
-                    pygame.draw.rect(screen, pygame.Color('green'), (self.left + x * self.cell_size,
-                                                                     self.top + y * self.cell_size, self.cell_size,
-                                                                     self.cell_size))
-                pygame.draw.rect(screen, pygame.Color('white'), (self.left + x * self.cell_size,
-                                                                 self.top + y * self.cell_size, self.cell_size,
-                                                                 self.cell_size), 1)
-
-    def next_move(self):
-        temp = copy.deepcopy(self.board)
-        # Сохранили наше поле
-        for x in range(self.width):
-            for y in range(self.height):
-                count = 0
-                for dx in range(-1, 2):
-                    for dy in range(-1, 2):
-                        if x + dx < 0 or y + dy < 0 or x + dx >= self.width or y + dy >= self.height:
-                            continue
-                        count += self.board[y + dy][x + dx]
-                count -= self.board[y][x]
-                if count == 3:
-                    temp[y][x] = 1
-                elif count < 2 or count > 3:
-                    temp[y][x] = 0
-
-        self.board = copy.deepcopy(temp) # что-то типа этого + время 9(ЗЫ: скопированно из задачки "жизнь")
-'''
-    pass
-
 class Food(Board):
     def __init__(self, food_color, screen_width, screen_height):
         self.food_color = food_color
@@ -582,7 +539,7 @@ class Snake(Food):
 
 
     def __init__(self, pos_x, pos_y, width, height):
-        super().__init__()
+        super().__init__(food_color=None, screen_width=None, screen_height=None)
         self.rect = self.image.get_rect().move(width * pos_x + 15, height * pos_y + 5)
         self.pos = (pos_x, pos_y)
         self.snake_body = [[100, 50], [90, 50], [80, 50]]
