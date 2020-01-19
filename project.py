@@ -159,13 +159,13 @@ class HaveLogin:
             for i in range(3):
                 pygame.draw.rect(screen, pygame.Color("blue"),
                                  (160, 160 + i * 70, 290, 53), 3)
-
-            screen.blit(self.text1, (width // 6, height // 8.3))   # (100, 60)
-            screen.blit(self.text2, (width // 1.379, height // 7.69))   # (435, 65)
-            screen.blit(self.text3, (width // 2.6, height // 2.94))   # (230, 170)
-            screen.blit(self.text4, (width // 3, height // 2.08))   # (200, 240)
-            screen.blit(self.text5, (width // 3.42, height // 1.61))   # (175, 310)
-            pygame.display.flip()
+            if run_havelog:
+                screen.blit(self.text1, (width // 6, height // 8.3))   # (100, 60)
+                screen.blit(self.text2, (width // 1.379, height // 7.69))   # (435, 65)
+                screen.blit(self.text3, (width // 2.6, height // 2.94))   # (230, 170)
+                screen.blit(self.text4, (width // 3, height // 2.08))   # (200, 240)
+                screen.blit(self.text5, (width // 3.42, height // 1.61))   # (175, 310)
+                pygame.display.flip()
 
 
 class NoLogin:
@@ -180,7 +180,7 @@ class NoLogin:
         self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
 
         self.log_app = self.cur.execute("""INSERT INTO logins(login) VALUES(?)""", (self.log,))
-        self.main_app = self.cur.execute("""INSERT INTO Main(login) VALUES(?)""", (self.log,))
+#        self.main_app = self.cur.execute("""INSERT INTO Main(login) VALUES(?)""", (self.log,))
         self.con.commit()
 
         size = width, height = 600, 500
@@ -378,33 +378,33 @@ class Menu:
                     if 40 <= event.pos[0] <= 560 and 420 <= event.pos[1] <= 475:
                         print("play")
                         Game(self.login, self.game_mode, board_size)
+            if run_menu is True:
+                screen.fill((0, 0, 0))
+                for i in range(3):
+                    pygame.draw.rect(screen, pygame.Color(self.list_size[i][0]),
+                                     (100 + i * 165, 165, 70, 50), self.list_size[i][1])
 
-            screen.fill((0, 0, 0))
-            for i in range(3):
-                pygame.draw.rect(screen, pygame.Color(self.list_size[i][0]),
-                                 (100 + i * 165, 165, 70, 50), self.list_size[i][1])
+                    screen.blit(self.size_list[i], (110 + i * 165, 180))
 
-                screen.blit(self.size_list[i], (110 + i * 165, 180))
+                    pygame.draw.rect(screen, pygame.Color(self.list_mode[i][0]),
+                                     (90 + i * 150, 295, 120, 50 ),
+                                     self.list_mode[i][1])
+                    screen.blit(self.mode_list[i], (100 + i * 166, 310))
 
-                pygame.draw.rect(screen, pygame.Color(self.list_mode[i][0]),
-                                 (90 + i * 150, 295, 120, 50 ),
-                                 self.list_mode[i][1])
-                screen.blit(self.mode_list[i], (100 + i * 166, 310))
+                screen.blit(self.titl, (width // 4.28, height // 10))   # (140, 50)
+                screen.blit(self.t_size, (width // 12, height // 4.16))   # (50, 120)
+                screen.blit(self.t_mode, (width // 12, height // 2))   # (50, 250)
+                screen.blit(self.t_char, (width // 12, height // 1.315))   # (50, 380)
+                pygame.draw.rect(screen, pygame.Color("blue"),
+                                 (width // 1.71, height // 1.35, width // 3.15,
+                                  height // 12.5), 3)   # (350, 370, 190, 60)
+                screen.blit(self.ch, (width // 1.538, height // 1.315))   # (390, 380)
+                screen.blit(self.play, (width // 2.3, height // 1.162))   # (260, 430)
+                pygame.draw.rect(screen, pygame.Color("blue"),
+                                 (width // 15, height // 1.19, width // 1.153,
+                                  height // 9), 3)   # (40, 420, 520, 55)
 
-            screen.blit(self.titl, (width // 4.28, height // 10))   # (140, 50)
-            screen.blit(self.t_size, (width // 12, height // 4.16))   # (50, 120)
-            screen.blit(self.t_mode, (width // 12, height // 2))   # (50, 250)
-            screen.blit(self.t_char, (width // 12, height // 1.315))   # (50, 380)
-            pygame.draw.rect(screen, pygame.Color("blue"),
-                             (width // 1.71, height // 1.35, width // 3.15,
-                              height // 12.5), 3)   # (350, 370, 190, 60)
-            screen.blit(self.ch, (width // 1.538, height // 1.315))   # (390, 380)
-            screen.blit(self.play, (width // 2.3, height // 1.162))   # (260, 430)
-            pygame.draw.rect(screen, pygame.Color("blue"),
-                             (width // 15, height // 1.19, width // 1.153,
-                              height // 9), 3)   # (40, 420, 520, 55)
-
-            pygame.display.flip()
+                pygame.display.flip()
         pygame.quit()
 
 
@@ -423,6 +423,8 @@ class Board:
 
         self.left = (width - self.cell_size * self.cell_c) // 2
         self.top = (width - self.cell_size * self.cell_c) // 5
+
+
 
     def render(self):
         for i in range(self.cell_c):
@@ -469,7 +471,7 @@ class Game:
 
         clock = pygame.time.Clock()
         ticks = 0
-        speed = 50
+        speed = 70
         # speed_2 = 0
 
         self.c_dir = None
@@ -486,60 +488,67 @@ class Game:
                     running_game = False
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     self.sound.play()
-                    board.get_click(event.pos)
                     if not self.body_coord:
+                        board.get_click(event.pos)
+                        #self.head_cell = list(board.get_cell(event.pos))
+                        #self.end_cell = list(board.get_cell(event.pos))
+                        #self.body_coord.append(list(board.get_cell(event.pos)))
+
                         self.head_cell = list(board.get_cell(event.pos))
                         self.end_cell = list(board.get_cell(event.pos))
                         self.body_coord.append(list(board.get_cell(event.pos)))
 
-                    else:
-                        self.end_cell = list(board.get_cell(event.pos))
-                        self.body_coord.append(list(board.get_cell(event.pos)))
+                    '''else:
+                        #self.end_cell = list(board.get_cell(event.pos))
+                        #self.body_coord.append(list(board.get_cell(event.pos)))
                         self.len += 1
                     print(f'head {self.head_cell}')
                     print(f'end {self.end_cell}')
-                    print(f'body {self.body_coord}')
+                    print(f'body {self.body_coord}')'''
+
                 if (event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE or
                         event.type == pygame.MOUSEBUTTONDOWN and event.button == 3):
                     snake_run = not snake_run
 
-                if (event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN) and self.l_dir is None:
-                    print("oooooooooooooooo")
-                    self.c_dir = "down"
-                    self.l_dir = "down"
-                    print(self.c_dir)
-                '''else:
-                    if self.c_dir != "down":
-                        self.c_dir = "down"'''
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN):
+                    if self.l_dir is None:
+                        self.c_dir = "down"
+                        self.l_dir = "down"
+                        print(self.c_dir)
+                    else:
+                        if self.c_dir != "up":
+                            self.c_dir = "down"
 
-                if (event.type == pygame.KEYDOWN and event.key == pygame.K_UP) and not self.l_dir:
-                    self.c_dir = "up"
-                    self.l_dir = "up"
-                else:
-                    if self.c_dir != "up":
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_UP):
+                    if self.l_dir is None:
                         self.c_dir = "up"
+                        self.l_dir = "up"
+                    else:
+                        if self.c_dir != "down":
+                            self.c_dir = "up"
 
-                if (event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT) and not self.l_dir:
-                    self.c_dir = "left"
-                    self.l_dir = "left"
-                else:
-                    if self.c_dir != "left":
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT):
+                    if self.l_dir is None:
                         self.c_dir = "left"
+                        self.l_dir = "left"
+                    else:
+                        if self.c_dir != "right":
+                            self.c_dir = "left"
 
-                if (event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT) and not self.l_dir:
-                    self.c_dir = "right"
-                    self.l_dir = "right"
-                else:
-                    if self.c_dir != "right":
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT):
+                    if self.l_dir is None:
                         self.c_dir = "right"
+                        self.l_dir = "right"
+                    else:
+                        if self.c_dir != "left":
+                            self.c_dir = "right"
 
             screen.fill((0, 0, 0))
             board.render()
             if ticks >= speed:
-                #print(self.c_dir == "down")
+
                 if snake_run:
-                    board.next_move(self.l_dir, self.head_cell,
-                                    self.end_cell, self.len, self.body_coord,
+                    board.next_move(self.head_cell, self.len, self.body_coord,
                                     cell_count, self.c_dir)
                     if self.c_dir == "right":
                         self.head_cell[1] += 1
@@ -581,42 +590,55 @@ class Snake(Board):
                                   self.top + self.cell_size * y,
                                   self.cell_size, self.cell_size), 1)
 
-    def next_move(self, l_dir, head, end, len, body, cell, c_dir="right"):
+    def next_move(self, head, len, body, cell, c_dir='right'):
         x_cd, y_cd = head
         temp = copy.deepcopy(self.board)  # сохраняем поле для дальнейшего изменения текущего
 
-        #print(body[-1][0])
-        #print(head)
-        #print()
         self.c_dir = c_dir
         #print("step", self.c_dir)
 
         for x in range(self.width):
             for y in range(self.height):
 
-                if y_cd < cell - 1:
-                    if c_dir == "right" and temp[x_cd][y_cd + 1] == 0:
+                if -1 < y_cd < cell - 1 and -1 < x_cd < cell - 1:
+                    if self.c_dir == "right" and temp[x_cd][y_cd + 1] == 0:
                         for i in range(len):
 
                             #print(temp[body[i][0]][body[i][1] + 1])
                             #print(temp[body[-1][0]][body[-1][1]])
 
-                            temp[body[i][0]][body[i][1] + 1] = 1
                             temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0]][body[i][1] + 1] = 1
                         for j in range(len):
                             body[j][1] += 1
 
-                if c_dir == "left" and self.board[x_cd][y_cd - 1] == 0:
-                    temp[x_cd][y_cd - 1] = 1
-                    temp[x_cd][y_cd] = 0
+                    if self.c_dir == "left" and temp[x_cd][y_cd - 1] == 0:
+                        for i in range(len):
+                            #print(temp[body[i][0]][body[i][1] - 1])
+                            #print(temp[body[-1][0]][body[-1][1]])
 
-                if c_dir == "up" and self.board[head[0] - 1][head[1]] == 0:
-                    temp[x_cd - 1][y_cd] = 1
-                    temp[x_cd][y_cd] = 0
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0]][body[i][1] - 1] = 1
 
-                if c_dir == "down" and self.board[head[0] + 1][head[1]] == 0:
-                    temp[x_cd + 1][y_cd] = 1
-                    temp[x_cd][y_cd] = 0
+                        for j in range(len):
+                            body[j][1] -= 1
+
+                    if self.c_dir == "up" and temp[x_cd - 1][y_cd] == 0:
+                        for i in range(len):
+
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0] - 1][body[i][1]] = 1
+                        for j in range(len):
+                            body[j][0] -= 1
+
+                    if self.c_dir == "down" and temp[x_cd + 1][y_cd] == 0:
+                        for i in range(len):
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0] + 1][body[i][1]] = 1
+
+                        for j in range(len):
+                            body[j][0] += 1
+
         self.board = copy.deepcopy(temp)
 
 
