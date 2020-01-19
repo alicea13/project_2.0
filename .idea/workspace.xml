@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="195f207f-8159-4557-aa0e-ded325906daa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+            <state relative-caret-position="-11894">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -125,6 +124,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.project" />
+        <item itemvalue="Python.project" />
       </list>
     </recent_temporary>
   </component>
@@ -160,26 +160,39 @@
       <option name="project" value="LOCAL" />
       <updated>1579132960267</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Удаляем музыку">
+      <created>1579133970683</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579133970683</updated>
+    </task>
+    <task id="LOCAL-00005" summary="commit">
+      <created>1579134119434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579134119434</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49438202" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49438202" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49636483" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4970258" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.4957039" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.505618" side_tool="true" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5042961" side_tool="true" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -231,19 +244,21 @@
     <MESSAGE value="Пробуем починить репозиторий" />
     <MESSAGE value="Merge branch 'feature/class_Snake/7' of https://github.com/alicea13/project_2.0 into dev/7&#10;&#10;# Conflicts:&#10;#&#9;project.py" />
     <MESSAGE value="Доработка класса Game, Snake" />
-    <option name="LAST_COMMIT_MESSAGE" value="Доработка класса Game, Snake" />
+    <MESSAGE value="Удаляем музыку" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="437" height="272" key="Git.Branch.Popup" />
-    <state width="437" height="272" key="Git.Branch.Popup/1920.1080" />
-    <state width="437" height="272" key="Git.Branch.Popup@1920.1080@120dpi" />
+    <state width="453" height="288" key="Git.Branch.Popup" />
+    <state width="453" height="288" key="Git.Branch.Popup/1920.1080" />
+    <state width="453" height="288" key="Git.Branch.Popup@1920.1080@120dpi" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/01.py" />
     <entry file="file://$PROJECT_DIR$/project.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+        <state relative-caret-position="306">
+          <caret line="624" column="34" selection-start-line="624" selection-start-column="34" selection-end-line="624" selection-end-column="34" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
