@@ -254,7 +254,6 @@ class Menu:
         screen = pygame.display.set_mode(size)
 
         self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
-
         text_before = pygame.font.SysFont("arial", 36)
         self.titl = text_before.render("Перед началом игры", 1, pygame.Color("blue"))
 
@@ -310,6 +309,7 @@ class Menu:
                     run_menu = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     self.sound.play()
+                    print(event.pos)
                     if 100 <= event.pos[0] <= 170 and 165 <= event.pos[1] <= 215:
                         #print(10)
                         board_size = 10
@@ -371,9 +371,9 @@ class Menu:
 
                         game_mode = "еда"
 
-                    if 350 <= event.pos[0] <= 540 and 390 <= event.pos[1] <= 450:
+                    if 350 <= event.pos[0] <= 540 and 370 <= event.pos[1] <= 400:
                         print("barrier menu")
-                        # Character()
+                        Character(self.login)
 
                     if 40 <= event.pos[0] <= 560 and 420 <= event.pos[1] <= 475:
                         print("play")
@@ -406,6 +406,77 @@ class Menu:
 
                 pygame.display.flip()
         pygame.quit()
+
+
+class Character:
+    def __init__(self, login):
+        super().__init__()
+        pygame.init()
+
+        self.login = login
+        size = width, height = 600, 500
+        screen = pygame.display.set_mode(size)
+
+        all_sprites = pygame.sprite.Group()
+
+        self.text_char = pygame.font.SysFont("arial", 36)
+        self.titl = self.text_char.render("Персонажи", 1,
+                                          (255, 191, 0))
+
+        emoji_1 = AnimatedSprite(self.load_image("emoji_1.3.png", -1), 3, 3, 50, 110,
+                                 all_sprites)
+
+        emoji_2 = AnimatedSprite(self.load_image("emoji_2.png", -1), 3, 3, 50, 180,
+                                 all_sprites)
+        clock = pygame.time.Clock()
+
+        run_char = True
+        while run_char:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    run_char = False
+            screen.fill((0, 0, 0))
+            screen.blit(self.titl, (width // 3, height // 10))  # (200, 50)
+            all_sprites.draw(screen)  # прорисовываем sprites
+            all_sprites.update()
+            pygame.display.flip()
+            clock.tick(10)
+
+        pygame.quit()
+
+    def load_image(self, name, color_key=None):
+        fullname = os.path.join("data", name)
+        image = pygame.image.load(fullname).convert()
+        if color_key is not None:
+            if color_key == -1:
+                color_key = image.get_at((0, 0))
+            image.set_colorkey(color_key)
+        else:
+            image = image.convert_alpha()
+        return image
+
+
+class AnimatedSprite(pygame.sprite.Sprite):
+    def __init__(self, sheet, columns, rows, x, y, sprite_group):
+        super().__init__(sprite_group)
+        self.frames = []
+        self.cut_sheet(sheet, columns, rows)
+        self.cur_frame = 0
+        self.image = self.frames[self.cur_frame]
+        self.rect = self.rect.move(x, y)
+
+    def cut_sheet(self, sheet, columns, rows):
+        self.rect = pygame.Rect(0, 0, sheet.get_width() // columns,
+                                sheet.get_height() // rows)
+        for j in range(rows):
+            for i in range(columns):
+                frame_location = (self.rect.w * i, self.rect.h * j)
+                self.frames.append(sheet.subsurface(pygame.Rect(
+                    frame_location, self.rect.size)))
+
+    def update(self):
+        self.cur_frame = (self.cur_frame + 1) % len(self.frames)
+        self.image = self.frames[self.cur_frame]
 
 
 class Board:
@@ -450,19 +521,16 @@ class Board:
 
 class Game:
     def __init__(self, login, mode, cell_count=10):
-        print()
+        '''print()
         print("mode", mode)
         print("login", login)
-        print("cell_count", cell_count)
+        print("cell_count", cell_count)'''
 
         pygame.init()
         size = width, height = 800, 700
         screen = pygame.display.set_mode(size)
 
-        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
-
         board = Board(screen, width, height, cell_count)  # создаем поле
-        '''board.set_view(20, 20, 50)'''
         clock = pygame.time.Clock()
         board = Snake(screen, width, height, cell_count)
 
@@ -471,7 +539,7 @@ class Game:
 
         clock = pygame.time.Clock()
         ticks = 0
-        speed = 70
+        speed = 110
         # speed_2 = 0
 
         self.c_dir = None
@@ -654,5 +722,5 @@ music()
 start = StartWindow()
 
 
-# меню с настройками
+# меню с настройками #
 # карта для перехода между режимами игры
