@@ -1,13 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="195f207f-8159-4557-aa0e-ded325906daa" name="Default Changelist" comment="">
+    <list default="true" id="cb0fa578-e8bd-454a-8e0b-ffcd6d78555a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/one_little_worm.db" beforeDir="false" afterPath="$PROJECT_DIR$/one_little_worm.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="423" column="54" selection-start-line="423" selection-start-column="54" selection-end-line="423" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6160">
+              <caret line="309" selection-start-line="309" selection-end-line="309" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/ntpath.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1440">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/pygame/sprite.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10960">
+              <caret line="551" selection-start-line="551" selection-end-line="551" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -17,28 +63,69 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/def_music/8" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/project.py" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="100" />
     <option name="width" value="1300" />
     <option name="height" value="1010" />
   </component>
-  <component name="ProjectId" id="1WnBV2yKku8sgJ5NmmZ3ugWN2ZA" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="project_2.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project_2.2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project_2.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project_2.2" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project_2.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project_2.2" type="462c0819:PsiDirectoryNode" />
+              <item name="music" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="project" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -65,38 +152,29 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.project" />
+        <item itemvalue="Python.project" />
+        <item itemvalue="Python.project" />
+        <item itemvalue="Python.project" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="195f207f-8159-4557-aa0e-ded325906daa" name="Default Changelist" comment="" />
+      <changelist id="cb0fa578-e8bd-454a-8e0b-ffcd6d78555a" name="Default Changelist" comment="" />
       <created>1578928790864</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578928790864</updated>
     </task>
-    <task id="LOCAL-00001" summary="Merge branch 'feature/class_Snake/7' of https://github.com/alicea13/project_2.0 into dev/7&#10;&#10;# Conflicts:&#10;#&#9;project.py">
-      <created>1578930553255</created>
+    <task id="LOCAL-00001" summary="Создана ветка feature/class_Character/9">
+      <created>1579455379334</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1578930553255</updated>
+      <updated>1579455379334</updated>
     </task>
     <task id="LOCAL-00002" summary="Доработка класса Game, Snake">
       <created>1578955871771</created>
@@ -112,15 +190,46 @@
       <option name="project" value="LOCAL" />
       <updated>1579132960267</updated>
     </task>
-    <task id="LOCAL-00004" summary="Доработка класса Game, Snake">
-      <created>1579176603513</created>
+    <task id="LOCAL-00004" summary="Удаляем музыку">
+      <created>1579133970683</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1579176603513</updated>
+      <updated>1579133970683</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit">
+      <created>1579134119434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579134119434</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49173826" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4957039" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49504295" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50826174" side_tool="true" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -128,7 +237,20 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
             </State>
           </value>
         </entry>
@@ -150,85 +272,60 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Пробуем починить репозиторий" />
-    <MESSAGE value="Merge branch 'feature/class_Snake/7' of https://github.com/alicea13/project_2.0 into dev/7&#10;&#10;# Conflicts:&#10;#&#9;project.py" />
-    <MESSAGE value="Доработка класса Game, Snake" />
-    <option name="LAST_COMMIT_MESSAGE" value="Доработка класса Game, Snake" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1579176602185">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579176602185" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1579173913759">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579173913759" />
-    <state width="443" height="278" key="Git.Branch.Popup" timestamp="1579775596963">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="443" height="278" key="Git.Branch.Popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579775596963" />
-    <state width="437" height="272" key="Git.Branch.Popup/1920.1080" timestamp="1579170977170" />
-    <state width="437" height="272" key="Git.Branch.Popup@1920.1080@120dpi" timestamp="1579170977170" />
-    <state width="942" height="347" key="GridCell.Tab.0.bottom" timestamp="1579176826242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="942" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579176826242" />
-    <state width="942" height="347" key="GridCell.Tab.0.center" timestamp="1579176826242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="942" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579176826242" />
-    <state width="942" height="347" key="GridCell.Tab.0.left" timestamp="1579176826242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="942" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579176826242" />
-    <state width="942" height="347" key="GridCell.Tab.0.right" timestamp="1579176826242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="942" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579176826242" />
-    <state width="942" height="347" key="GridCell.Tab.1.bottom" timestamp="1579176826242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="942" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579176826242" />
-    <state width="942" height="347" key="GridCell.Tab.1.center" timestamp="1579176826242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="942" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579176826242" />
-    <state width="942" height="347" key="GridCell.Tab.1.left" timestamp="1579176826242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="942" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579176826242" />
-    <state width="942" height="347" key="GridCell.Tab.1.right" timestamp="1579176826242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="942" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579176826242" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1579176608731">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579176608731" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1579775506046">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579775506046" />
-    <state x="685" y="311" key="git4idea.merge.GitPullDialog" timestamp="1579775609230">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="685" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579775609230" />
+    <MESSAGE value="Создана ветка feature/class_Character/9" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создана ветка feature/class_Character/9" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/project.py</url>
-          <line>633</line>
+          <line>375</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/project.py</url>
-          <line>615</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../project_01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="423" column="54" selection-start-line="423" selection-start-column="54" selection-end-line="423" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6160">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/pygame/sprite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10960">
+          <caret line="551" selection-start-line="551" selection-end-line="551" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
