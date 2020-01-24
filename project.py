@@ -423,11 +423,36 @@ class Character:
         self.titl = self.text_char.render("Персонажи", 1,
                                           (255, 191, 0))
 
-        emoji_1 = AnimatedSprite(self.load_image("emoji_1.3.png", -1), 3, 3, 50, 110,
+        emoji_1 = AnimatedSprite(self.load_image("emoji_1.3.png", -1), 3, 3, 40, 110,
                                  all_sprites)
 
-        emoji_2 = AnimatedSprite(self.load_image("emoji_2.png", -1), 3, 3, 50, 180,
+        emoji_2 = AnimatedSprite(self.load_image("emoji_2.png", -1), 3, 3, 40, 210,
                                  all_sprites)
+
+        emoji_10 = AnimatedSprite(self.load_image("emoji_10.png", -1), 3, 3, 40, 310,
+                                 all_sprites)
+
+        emoji_7 = AnimatedSprite(self.load_image("emoji_7.png", -1), 3, 3, 40,
+                                 410, all_sprites)
+
+        emoji_5 = AnimatedSprite(self.load_image("emoji_5.png", -1), 3, 3, 220,
+                                 110, all_sprites)
+
+        emoji_6 = AnimatedSprite(self.load_image("emoji_6.png", -1), 3, 3, 220,
+                                 210, all_sprites)
+        emoji_9 = AnimatedSprite(self.load_image("emoji_9.png", -1), 3, 3, 220,
+                                 310, all_sprites)
+        emoji_8 = AnimatedSprite(self.load_image("emoji_8.png", -1), 3, 3, 220,
+                                 410, all_sprites)
+        emoji_4 = AnimatedSprite(self.load_image("emoji_4.png", -1), 3, 3, 410,
+                                 110, all_sprites)
+        emoji_3 = AnimatedSprite(self.load_image("emoji_3.png", -1), 3, 3, 410,
+                                 210, all_sprites)
+        emoji_11 = AnimatedSprite(self.load_image("emoji_11.png", -1), 3, 3,
+                                  410, 310, all_sprites)
+        emoji_12 = AnimatedSprite(self.load_image("emoji_12.png", -1), 3, 3,
+                                  410, 410, all_sprites)
+
         clock = pygame.time.Clock()
 
         run_char = True
@@ -435,10 +460,17 @@ class Character:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run_char = False
+
+                #if event.pos[0]
             screen.fill((0, 0, 0))
-            screen.blit(self.titl, (width // 3, height // 10))  # (200, 50)
+            screen.blit(self.titl, (width // 3, height // 11))  # (200, 50)
             all_sprites.draw(screen)  # прорисовываем sprites
             all_sprites.update()
+            for i in range(3):
+                pygame.draw.rect(screen, pygame.Color("blue"), (25 + i * 190, 95, 180, 90), 3)   # 255, 153, 51
+                pygame.draw.rect(screen, pygame.Color("blue"), (25 + i * 190, 195, 180, 90), 3)
+                pygame.draw.rect(screen, pygame.Color("blue"), (25 + i * 190, 295, 180, 90), 3)
+                pygame.draw.rect(screen, pygame.Color("blue"), (25 + i * 190, 395, 180, 90), 3) # (204, 204, 255)
             pygame.display.flip()
             clock.tick(10)
 
@@ -564,7 +596,7 @@ class Game:
 
                         self.head_cell = list(board.get_cell(event.pos))
                         self.end_cell = list(board.get_cell(event.pos))
-                        self.body_coord.append(list(board.get_cell(event.pos)))
+                        self.body_coord.append(list(board.get_cell(event.pos), None))
 
                     '''else:
                         #self.end_cell = list(board.get_cell(event.pos))
