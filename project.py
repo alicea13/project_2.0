@@ -717,7 +717,7 @@ class Snake(Board):
                             temp[body[-1][0]][body[-1][1]] = 0
                             temp[body[i][0]][body[i][1] + 1] = 1
                         for j in range(len):
-                            body[j][1] += 1
+                            body[j][1] += 10
 
                     if self.c_dir == "left" and temp[x_cd][y_cd - 1] == 0:
                         for i in range(len):
@@ -728,7 +728,7 @@ class Snake(Board):
                             temp[body[i][0]][body[i][1] - 1] = 1
 
                         for j in range(len):
-                            body[j][1] -= 1
+                            body[j][1] -= 10
 
                     if self.c_dir == "up" and temp[x_cd - 1][y_cd] == 0:
                         for i in range(len):
@@ -736,7 +736,7 @@ class Snake(Board):
                             temp[body[-1][0]][body[-1][1]] = 0
                             temp[body[i][0] - 1][body[i][1]] = 1
                         for j in range(len):
-                            body[j][0] -= 1
+                            body[j][0] -= 10
 
                     if self.c_dir == "down" and temp[x_cd + 1][y_cd] == 0:
                         for i in range(len):
@@ -744,7 +744,7 @@ class Snake(Board):
                             temp[body[i][0] + 1][body[i][1]] = 1
 
                         for j in range(len):
-                            body[j][0] += 1
+                            body[j][0] += 10
     def if_we_have_apple(self):
         apple = Apple()
 
