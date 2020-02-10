@@ -125,6 +125,9 @@ class HaveLogin:
         act_chg = pygame.font.SysFont("arial", 25)
         self.text4 = act_chg.render("Таблица рекордов", 1, pygame.Color("lightblue"))
 
+        act_authors = pygame.font.SysFont("colibri", 25)
+        self.text6 = act_authors('Авторы программы', 1, pigame.Color("Yellow"))
+
         act_exit = pygame.font.SysFont("arial", 25)
         self.text5 = act_exit.render("Сменить пользователя", 1,
                                     pygame.Color("lightblue"))
@@ -152,6 +155,9 @@ class HaveLogin:
                     if 160 <= event.pos[0] <= 450 and 300 <= event.pos[1] <= 353:
                         print("back")
 
+                    if 160 <= event.pos[0] <= 450 and 370 <= event.pos[1] <= 423:
+                        print("authors")
+
                         # выход к стартовому окну
                         StartWindow()
                         run_havelog = False
@@ -165,6 +171,7 @@ class HaveLogin:
                 screen.blit(self.text3, (width // 2.6, height // 2.94))   # (230, 170)
                 screen.blit(self.text4, (width // 3, height // 2.08))   # (200, 240)
                 screen.blit(self.text5, (width // 3.42, height // 1.61))   # (175, 310)
+                screen.blit(self.text6, (width // 4, height // 1.4))
                 pygame.display.flip()
 
 
@@ -744,7 +751,8 @@ class Snake(Board):
         self.board = copy.deepcopy(temp)
 
 class Apple():
-
+    def __init__(self, food_color, screen_width, screen_height):
+        self.food_pos
 
 def music():
     pygame.init()
