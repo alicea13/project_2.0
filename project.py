@@ -779,3 +779,4 @@ start = StartWindow()
 snake = Snake()
 food = Apple(game.brown, game.screen_width, game.screen_height)
 while True:
+    None
