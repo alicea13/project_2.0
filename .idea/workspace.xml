@@ -78,12 +78,20 @@
       <option name="project" value="LOCAL" />
       <updated>1581361287370</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="give_authors(may be)">
+      <created>1581361867775</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581361867775</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="we have made class Apple" />
-    <option name="LAST_COMMIT_MESSAGE" value="we have made class Apple" />
+    <MESSAGE value="give_authors(may be)" />
+    <option name="LAST_COMMIT_MESSAGE" value="give_authors(may be)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="444" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581361088317">
@@ -94,9 +102,9 @@
       <screen x="53" y="27" width="1867" height="1053" />
     </state>
     <state x="660" y="218" width="642" height="668" key="#project/53.27.1867.1053@53.27.1867.1053" timestamp="1581361040086" />
-    <state x="590" y="96" width="782" height="912" key="CommitChangelistDialog2" timestamp="1581361286725">
+    <state x="590" y="96" width="782" height="912" key="CommitChangelistDialog2" timestamp="1581361867328">
       <screen x="53" y="27" width="1867" height="1053" />
     </state>
-    <state x="590" y="96" width="782" height="912" key="CommitChangelistDialog2/53.27.1867.1053@53.27.1867.1053" timestamp="1581361286725" />
+    <state x="590" y="96" width="782" height="912" key="CommitChangelistDialog2/53.27.1867.1053@53.27.1867.1053" timestamp="1581361867328" />
   </component>
 </project>

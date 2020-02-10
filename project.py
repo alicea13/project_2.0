@@ -752,7 +752,16 @@ class Snake(Board):
 
 class Apple():
     def __init__(self, food_color, screen_width, screen_height):
-        self.food_pos
+        self.food_pos = food_pos
+        self.food_sizex = 20
+        self.food_sizey = 20
+        self.food_pos = [random.randrange(1, screen_width / 10) * 10, random.randrange(1, screen_height/10)*10]
+
+    def draw_food(self):
+        board = Board()
+        pygame.draw.rect(board, self.food_color,
+                         pygame.Rect(self.food_pos[0], self.food_pos[1],
+                                     self.food_sizex, self.food_sizey))
 
 def music():
     pygame.init()
@@ -764,3 +773,5 @@ def music():
 
 music()
 start = StartWindow()
+food = Food(game.brown, game.screen_width, game.screen_height)
+while True:
