@@ -745,8 +745,11 @@ class Snake(Board):
 
                         for j in range(len):
                             body[j][0] += 10
-    def if_we_have_apple(self):
+    def if_we_have_apple(self, head):
         apple = Apple()
+        x_cd, y_cd = head
+        if x_cd == self.food_pos[0] and y_cd == self.pos[1]:
+
 
         self.board = copy.deepcopy(temp)
 
@@ -773,5 +776,6 @@ def music():
 
 music()
 start = StartWindow()
-food = Food(game.brown, game.screen_width, game.screen_height)
+snake = Snake()
+food = Apple(game.brown, game.screen_width, game.screen_height)
 while True:
