@@ -1,8 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="de851bb8-448f-4bb7-a95a-89dc43192e7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="100" />
     <option name="width" value="1300" />
     <option name="height" value="1010" />
+  </component>
+  <component name="ProjectId" id="1Xd0rXssFEkxLf2zTHwEYXqV4w5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="project" type="PythonConfigurationType" factoryName="Python" editBeforeRun="true" temporary="true">
+      <module name="project_git_2.0" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.project" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de851bb8-448f-4bb7-a95a-89dc43192e7b" name="Default Changelist" comment="" />
+      <created>1581360863101</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581360863101</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="444" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581361088317">
+      <screen x="53" y="27" width="1867" height="1053" />
+    </state>
+    <state x="444" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/53.27.1867.1053@53.27.1867.1053" timestamp="1581361088317" />
+    <state x="660" y="218" width="642" height="668" key="#project" timestamp="1581361040086">
+      <screen x="53" y="27" width="1867" height="1053" />
+    </state>
+    <state x="660" y="218" width="642" height="668" key="#project/53.27.1867.1053@53.27.1867.1053" timestamp="1581361040086" />
+    <state x="590" y="96" width="782" height="912" key="CommitChangelistDialog2" timestamp="1581360936937">
+      <screen x="53" y="27" width="1867" height="1053" />
+    </state>
+    <state x="590" y="96" width="782" height="912" key="CommitChangelistDialog2/53.27.1867.1053@53.27.1867.1053" timestamp="1581360936937" />
   </component>
 </project>
