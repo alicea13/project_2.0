@@ -562,6 +562,8 @@ class Game:
         size = width, height = 800, 700
         screen = pygame.display.set_mode(size)
 
+        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
+
         board = Board(screen, width, height, cell_count)  # создаем поле
         clock = pygame.time.Clock()
         board = Snake(screen, width, height, cell_count)
@@ -596,7 +598,7 @@ class Game:
 
                         self.head_cell = list(board.get_cell(event.pos))
                         self.end_cell = list(board.get_cell(event.pos))
-                        self.body_coord.append(list(board.get_cell(event.pos), None))
+                        self.body_coord.append(list(board.get_cell(event.pos)))
 
                     '''else:
                         #self.end_cell = list(board.get_cell(event.pos))
