@@ -440,21 +440,23 @@ class Menu:
                         board_size = 10
 
                         self.list_size[0] = [(162, 162, 208), 0]
-                        self.list_size[1], self.list_size[2] = [(255, 20, 147), 3],[(255, 20, 147), 3]
+                        self.list_size[1], self.list_size[2] = [(255, 20, 147), 3],(255, 20, 147), 3]]
 
                     if 265 <= event.pos[0] <= 335 and 165 <= event.pos[1] <= 215:
                         # print(15)
                         board_size = 15
 
                         self.list_size[1] = [(162, 162, 208), 0]
-                        self.list_size[0], self.list_size[2] = [(255, 20, 147), 3], [(255, 20, 147), 3]
+                        self.list_size[0], self.list_size[2] =
+                        [(255, 20, 147), 3], [(255, 20, 147), 3]
 
                     if 430 <= event.pos[0] <= 500 and 165 <= event.pos[1] <= 215:
                         #print(20)
                         board_size = 20
 
                         self.list_size[2] = [(162, 162, 208), 0]
-                        self.list_size[1], self.list_size[0] = [(255, 20, 147), 3], [(255, 20, 147), 3]
+                        self.list_size[1], self.list_size[0] =
+                        [(255, 20, 147), 3], [(255, 20, 147), 3]
 
                     if 90 <= event.pos[0] <= 210 and 295 <= event.pos[1] <= 345:
 
