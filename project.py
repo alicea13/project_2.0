@@ -180,7 +180,7 @@ class InputText:
             self.have_login = HaveLogin(login_t)
             self.exit = True
         else:
-            #self.no_login = NoLogin(login_t)
+            self.no_login = NoLogin(login_t)
             self.exit = True
 
     def update(self):
@@ -188,8 +188,7 @@ class InputText:
         self.rect.w = width
 
     def draw(self, screen):
-        if self.l <= 8:
-            screen.blit(self.text_surf, (self.rect.x + 5, self.rect.y + 5))
+        screen.blit(self.text_surf, (self.rect.x + 5, self.rect.y + 5))
 
         pygame.draw.rect(screen, self.color, self.rect, 4)
 
@@ -250,17 +249,15 @@ class HaveLogin:
                         print("back")
 
                         # выход к стартовому окну
-                        StartWindow()
                         run_havelog = False
+                        StartWindow()
 
                     if event.type == pygame.MOUSEBUTTONDOWN:
-                        if 5 <= event.pos[0] <= 65 and 5 <= event.pos[
-                            1] <= 65 and music_on:
+                        if 5 <= event.pos[0] <= 65 and 5 <= event.pos[1] <= 65 and music_on:
                             pygame.mixer.music.pause()
                             music_on = False
                             continue
-                        if 5 <= event.pos[0] <= 65 and 5 <= event.pos[
-                            1] <= 65 and not music_on:
+                        if 5 <= event.pos[0] <= 65 and 5 <= event.pos[1] <= 65 and not music_on:
                             pygame.mixer.music.unpause()
                             music_on = True
 
@@ -275,6 +272,94 @@ class HaveLogin:
                 pygame.display.flip()
 
 
+class NoLogin:
+    def __init__(self, login):
+        super().__init__()
+        pygame.init()
+
+        self.log = login
+        self.con = sqlite3.connect("one_little_worm.db")
+        self.cur = self.con.cursor()
+
+        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
+
+        self.log_app = self.cur.execute("""INSERT INTO logins(login) VALUES(?)""", (self.log,))
+#        self.main_app = self.cur.execute("""INSERT INTO Main(login) VALUES(?)""", (self.log,))
+        self.con.commit()
+
+        size = width, height = 600, 500
+        screen = pygame.display.set_mode(size)
+
+        self.font = pygame.transform.scale(load_image('font_2.jpg'), (width, height))
+        self.music = pygame.transform.scale(load_image('music_2.png', -1), (60, 60))
+
+        titl = pygame.font.SysFont('arial', 40)
+        self.text1 = titl.render("Новый игрок,", 1, (153, 0, 102))
+
+
+        log = pygame.font.SysFont('colibri', 50)
+        self.text2 = log.render(login, 1, (112, 41, 99))
+
+        act_open = pygame.font.SysFont("arial", 30, bold=True)
+        self.text3 = act_open.render(f"Начать игру", 1, (189, 51, 164))
+
+        act_chg = pygame.font.SysFont("arial", 30, bold=True)
+        self.text4 = act_chg.render("Таблица рекордов", 1, (189, 51, 164))
+
+        act_exit = pygame.font.SysFont("arial", 30, bold=True)
+        self.text5 = act_exit.render("Сменить пользователя", 1, (189, 51, 164))
+
+        run_nolog = True
+
+        while run_nolog:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    run_nolog = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    self.sound.play()
+                    if 160 <= event.pos[0] <= 450 and 160 <= event.pos[1] <= 213:
+                        print("game")
+
+                        # открытие окна меню
+                        Menu(self.log)
+
+                        run_nolog = False
+                    if 160 <= event.pos[0] <= 450 and 230 <= event.pos[1] <= 283:
+                        print("record")
+                        # вывод топ 10 (?)
+                        # Record()
+
+                    if 160 <= event.pos[0] <= 450 and 300 <= event.pos[1] <= 353:
+                        print("back")
+
+                        # выход к стартовому окну
+                        StartWindow()
+                        run_nolog = False
+                    if 5 <= event.pos[0] <= 65 and 5 <= event.pos[
+                        1] <= 65 and music_on:
+                        pygame.mixer.music.pause()
+                        music_on = False
+                        continue
+                    if 5 <= event.pos[0] <= 65 and 5 <= event.pos[
+                        1] <= 65 and not music_on:
+                        pygame.mixer.music.unpause()
+                        music_on = True
+
+            if run_nolog:
+                screen.blit(self.font, (0, 0))
+                screen.blit(self.music, (5, 5))
+                screen.blit(self.text1, (60, height // 8.3))
+                screen.blit(self.text2, (375, height // 7.69))
+                screen.blit(self.text3, (210, height // 2.94))
+                screen.blit(self.text4, (165, height // 2.08))
+                screen.blit(self.text5, (145, height // 1.61))
+
+                pygame.display.flip()
+
+        pygame.quit()
+
+
+
 music_on = True
 
 
@@ -284,7 +369,6 @@ def music():
                 "music/melody_3.mp3", "music/melody_4.mp3"]
     pygame.mixer.music.load(random.choice(music_sp))
     pygame.mixer.music.play()
-
 
 
 def load_image(name, color_key=None):
