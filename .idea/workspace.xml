@@ -245,6 +245,24 @@
     <MESSAGE value="Изменения в классе HaveLogin" />
     <option name="LAST_COMMIT_MESSAGE" value="Изменения в классе HaveLogin" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="938" height="280" key="GridCell.Tab.0.bottom" timestamp="1581689960985">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581689960985" />
+    <state width="938" height="280" key="GridCell.Tab.0.center" timestamp="1581689960985">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581689960985" />
+    <state width="938" height="280" key="GridCell.Tab.0.left" timestamp="1581689960985">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581689960985" />
+    <state width="938" height="280" key="GridCell.Tab.0.right" timestamp="1581689960985">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581689960985" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../../project_01.py">
       <provider selected="true" editor-type-id="text-editor">
