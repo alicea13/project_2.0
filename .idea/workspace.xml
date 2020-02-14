@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb0fa578-e8bd-454a-8e0b-ffcd6d78555a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/emoji_10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/emoji_9.png" afterDir="false" />
+    <list default="true" id="195f207f-8159-4557-aa0e-ded325906daa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/one_little_worm.db" beforeDir="false" afterPath="$PROJECT_DIR$/one_little_worm.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,63 +15,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="471" column="89" selection-start-line="471" selection-start-column="89" selection-end-line="471" selection-end-column="89" />
+            <state relative-caret-position="-11894">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/emoji_1.3.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/emoji_2.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/emoji_3.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/emoji_4.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/emoji_5.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6160">
-              <caret line="309" selection-start-line="309" selection-end-line="309" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/ntpath.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/pygame/sprite.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10960">
-              <caret line="551" selection-start-line="551" selection-end-line="551" />
             </state>
           </provider>
         </entry>
@@ -98,16 +34,17 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/8" />
+        <entry key="$PROJECT_DIR$" value="feature/class_Character/9" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/01.py" />
         <option value="$PROJECT_DIR$/project.py" />
       </list>
     </option>
@@ -148,7 +85,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../05.12.19 PyGame_4" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -189,8 +126,6 @@
         <item itemvalue="Python.project" />
         <item itemvalue="Python.project" />
         <item itemvalue="Python.project" />
-        <item itemvalue="Python.project" />
-        <item itemvalue="Python.project" />
       </list>
     </recent_temporary>
   </component>
@@ -199,18 +134,18 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cb0fa578-e8bd-454a-8e0b-ffcd6d78555a" name="Default Changelist" comment="" />
+      <changelist id="195f207f-8159-4557-aa0e-ded325906daa" name="Default Changelist" comment="" />
       <created>1578928790864</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578928790864</updated>
     </task>
-    <task id="LOCAL-00001" summary="Создана ветка feature/class_Character/9">
-      <created>1579455379334</created>
+    <task id="LOCAL-00001" summary="Merge branch 'feature/class_Snake/7' of https://github.com/alicea13/project_2.0 into dev/7&#10;&#10;# Conflicts:&#10;#&#9;project.py">
+      <created>1578930553255</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1579455379334</updated>
+      <updated>1578930553255</updated>
     </task>
     <task id="LOCAL-00002" summary="Доработка класса Game, Snake">
       <created>1578955871771</created>
@@ -240,26 +175,25 @@
       <option name="project" value="LOCAL" />
       <updated>1579134119434</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49107733" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4957039" weight="0.39943343" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49438202" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49636483" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49504295" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.4957039" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5089227" side_tool="true" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5042961" side_tool="true" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -308,70 +242,51 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Создана ветка feature/class_Character/9" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создана ветка feature/class_Character/9" />
+    <MESSAGE value="Пробуем починить репозиторий" />
+    <MESSAGE value="Merge branch 'feature/class_Snake/7' of https://github.com/alicea13/project_2.0 into dev/7&#10;&#10;# Conflicts:&#10;#&#9;project.py" />
+    <MESSAGE value="Доработка класса Game, Snake" />
+    <MESSAGE value="Удаляем музыку" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/project.py</url>
-          <line>375</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state width="459" height="294" key="Git.Branch.Popup" timestamp="1581687953638">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="459" height="294" key="Git.Branch.Popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581687953637" />
+    <state width="453" height="288" key="Git.Branch.Popup/1920.1080" timestamp="1581687901579" />
+    <state width="453" height="288" key="Git.Branch.Popup@1920.1080@120dpi" timestamp="1581687901579" />
+    <state width="938" height="280" key="GridCell.Tab.0.bottom" timestamp="1581688005832">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581688005832" />
+    <state width="938" height="280" key="GridCell.Tab.0.center" timestamp="1581688005831">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581688005831" />
+    <state width="938" height="280" key="GridCell.Tab.0.left" timestamp="1581688005831">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581688005831" />
+    <state width="938" height="280" key="GridCell.Tab.0.right" timestamp="1581688005831">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581688005831" />
+    <state x="741" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1581687939194">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="741" y="232" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581687939194" />
+    <state x="685" y="311" key="git4idea.merge.GitPullDialog" timestamp="1581687928188">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="685" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581687928188" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../project_01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
-          <folding>
-            <element signature="e#0#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6160">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/ntpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/pygame/sprite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10960">
-          <caret line="551" selection-start-line="551" selection-end-line="551" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/emoji_1.3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/emoji_2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/emoji_3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/emoji_4.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/emoji_5.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/01.py" />
     <entry file="file://$PROJECT_DIR$/project.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="471" column="89" selection-start-line="471" selection-start-column="89" selection-end-line="471" selection-end-column="89" />
+        <state relative-caret-position="306">
+          <caret line="624" column="34" selection-start-line="624" selection-start-column="34" selection-end-line="624" selection-end-column="34" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
