@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb0fa578-e8bd-454a-8e0b-ffcd6d78555a" name="Default Changelist" comment="" />
+    <list default="true" id="cb0fa578-e8bd-454a-8e0b-ffcd6d78555a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/one_little_worm.db" beforeDir="false" afterPath="$PROJECT_DIR$/one_little_worm.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,14 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581687781227</updated>
     </task>
-    <task id="LOCAL-00005" summary="commit">
-      <created>1579134119434</created>
+    <task id="LOCAL-00005" summary="commit without apples in the my branch">
+      <created>1581687918601</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1579134119434</updated>
+      <updated>1581687918601</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,37 +167,38 @@
     <MESSAGE value="Изменения в классе HaveLogin" />
     <MESSAGE value="Class Board + Class Snake and Class Apples" />
     <MESSAGE value="commit without apples2" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit without apples2" />
+    <MESSAGE value="commit without apples in the my branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit without apples in the my branch" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1581687779528">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1581687917311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581687779528" />
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581687917311" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1581687527144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581687527144" />
-    <state width="931" height="280" key="GridCell.Tab.0.bottom" timestamp="1581687695576">
+    <state width="931" height="280" key="GridCell.Tab.0.bottom" timestamp="1581688811867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="931" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581687695576" />
-    <state width="931" height="280" key="GridCell.Tab.0.center" timestamp="1581687695576">
+    <state width="931" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581688811867" />
+    <state width="931" height="280" key="GridCell.Tab.0.center" timestamp="1581688811867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="931" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581687695576" />
-    <state width="931" height="280" key="GridCell.Tab.0.left" timestamp="1581687695576">
+    <state width="931" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581688811867" />
+    <state width="931" height="280" key="GridCell.Tab.0.left" timestamp="1581688811867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="931" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581687695576" />
-    <state width="931" height="280" key="GridCell.Tab.0.right" timestamp="1581687695576">
+    <state width="931" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581688811867" />
+    <state width="931" height="280" key="GridCell.Tab.0.right" timestamp="1581688811867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="931" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581687695576" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581687893645">
+    <state width="931" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581688811867" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581687939484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581687893645" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581687939484" />
     <state x="612" y="189" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581686851664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
