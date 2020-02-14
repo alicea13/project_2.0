@@ -4,7 +4,6 @@ import sqlite3
 import copy
 
 
-
 all_sprites = pygame.sprite.Group()
 
 
@@ -27,13 +26,13 @@ class StartWindow:
         self.text2 = ask_input.render("Введите логин:", 1, (0, 49, 83))
 
         ex = False
-        login = InputText(width // 2 - 70, height // 5 * 3 - 32, 140, 32, ex)
+        login = InputText(width // 2 - 70, height // 5 * 3 - 32, 140, 32, ex, (255, 20, 147))
 
         self.h_border = pygame.sprite.Group()
         self.v_border = pygame.sprite.Group()
 
-        self.font = pygame.transform.scale(load_image('font_4.jpg'), (width, height))
-        self.music = pygame.transform.scale(load_image('music_2.png', -1), (60, 60))
+        self.font = pygame.transform.scale(self.load_image('font_4.jpg'), (width, height))
+        self.music = pygame.transform.scale(self.load_image('music_2.png', -1), (60, 60))
 
 
         clock = pygame.time.Clock()
@@ -77,6 +76,20 @@ class StartWindow:
             pygame.display.flip()
         pygame.quit()
 
+    def load_image(self, name, color_key=None):
+        fullname = os.path.join("data", name)
+        image = pygame.image.load(fullname).convert()
+        if color_key is not None:
+            if color_key == -1:
+                color_key = image.get_at((0, 0))
+            image.set_colorkey(color_key)
+        else:
+            image = image.convert_alpha()
+        return image
+
+    def get_click(self, pos):
+        print("here")
+
 
 class Bubble(pygame.sprite.Sprite, StartWindow):
     def __init__(self, radius, x, y, par):
@@ -118,16 +131,15 @@ class Border(pygame.sprite.Sprite):
 
 
 class InputText:
-    def __init__(self, x, y, width, height, ex, text=''):
+    def __init__(self, x, y, width, height, ex, color, text=''):
         self.rect = pygame.Rect(x, y, width, height)
         self.login_t = text
-        self.color = (255, 20, 147)
-        self.text_surf = pygame.font.Font(None, 32).render(text, True, self.color)
+        self.color = color
+        self.text_surf = pygame.font.Font(None, 32).render(text, True, (255, 20, 147))
         self.run_text = False
         self.exit = ex
 
         self.l = 0
-
         self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
 
         self.con = sqlite3.connect("one_little_worm.db")
@@ -136,7 +148,6 @@ class InputText:
     def events(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
             self.sound.play()
-
             if self.rect.collidepoint(event.pos):
                 self.run_text = True
                 self.color = (0, 49, 73)
@@ -145,17 +156,18 @@ class InputText:
                 self.color = (255, 20, 147)
 
         if event.type == pygame.KEYDOWN and self.run_text:
-                if event.key == pygame.K_RETURN:
-                    self.open(self.login_t)
-                    self.login_t = ""
-                elif event.key == pygame.K_BACKSPACE:
-                    self.login_t = self.login_t[:-1]
-                else:
-                    if self.l <= 9:
-                        self.login_t += event.unicode
-                        self.l += 1
-                self.text_surf = pygame.font.Font(None, 32).\
-                    render(self.login_t, True, (255, 20, 147))
+            if event.key == pygame.K_RETURN:
+                self.open(self.login_t)
+                self.login_t = ""
+            elif event.key == pygame.K_BACKSPACE:
+                self.login_t = self.login_t[:-1]
+                if self.l != 1:
+                    self.l -= 1
+            else:
+                if self.l <= 8:
+                    self.login_t += event.unicode
+                    self.l += 1
+            self.text_surf = pygame.font.Font(None, 32).render(self.login_t, True, (255, 20, 147))
 
     def open(self, login_t):
         self.id_login = self.cur.execute("""SELECT id FROM logins
@@ -165,10 +177,10 @@ class InputText:
         if self.id_login != []:
             self.l, = self.id_login[0]
 
-            # self.have_login = HaveLogin(login_t)
+            self.have_login = HaveLogin(login_t)
             self.exit = True
         else:
-            # self.no_login = NoLogin(login_t)
+            #self.no_login = NoLogin(login_t)
             self.exit = True
 
     def update(self):
@@ -176,9 +188,91 @@ class InputText:
         self.rect.w = width
 
     def draw(self, screen):
-        screen.blit(self.text_surf, (self.rect.x + 5, self.rect.y + 5))
+        if self.l <= 8:
+            screen.blit(self.text_surf, (self.rect.x + 5, self.rect.y + 5))
 
         pygame.draw.rect(screen, self.color, self.rect, 4)
+
+
+class HaveLogin:
+    def __init__(self, login):
+        global music_on
+        super().__init__()
+        pygame.init()
+
+        self.log = login
+        size = width, height = 600, 500
+        screen = pygame.display.set_mode(size)
+
+        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
+
+        self.font = pygame.transform.scale(load_image('font_2.jpg'),
+                                           (width, height))
+        self.music = pygame.transform.scale(load_image('music_2.png', -1),
+                                            (60, 60))
+
+        titl = pygame.font.SysFont('arial', 40)
+        self.text1 = titl.render("Добро пожаловать,", 1, (153, 0, 102))
+
+        log = pygame.font.SysFont('colibri', 50)
+        self.text2 = log.render(login, 1, (112, 41, 99))
+
+        act_open = pygame.font.SysFont("arial", 30, bold=True)
+        self.text3 = act_open.render(f"Начать игру", 1, (189, 51, 164))
+
+        act_chg = pygame.font.SysFont("arial", 30, bold=True)
+        self.text4 = act_chg.render("Таблица рекордов", 1, (189, 51, 164))
+
+        act_exit = pygame.font.SysFont("arial", 30, bold=True)
+        self.text5 = act_exit.render("Сменить пользователя", 1, (189, 51, 164))
+
+        run_havelog = True
+
+        while run_havelog:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    run_havelog = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    self.sound.play()
+                    if 160 <= event.pos[0] <= 450 and 160 <= event.pos[1] <= 213:
+                        print("game")
+
+                        # открытие окна меню
+                        #Menu(self.log)
+
+                        run_havelog = False
+                    if 160 <= event.pos[0] <= 450 and 230 <= event.pos[1] <= 283:
+                        print("record")
+                        # вывод топ 10 (?)
+                        # Record()
+
+                    if 160 <= event.pos[0] <= 450 and 300 <= event.pos[1] <= 353:
+                        print("back")
+
+                        # выход к стартовому окну
+                        StartWindow()
+                        run_havelog = False
+
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        if 5 <= event.pos[0] <= 65 and 5 <= event.pos[
+                            1] <= 65 and music_on:
+                            pygame.mixer.music.pause()
+                            music_on = False
+                            continue
+                        if 5 <= event.pos[0] <= 65 and 5 <= event.pos[
+                            1] <= 65 and not music_on:
+                            pygame.mixer.music.unpause()
+                            music_on = True
+
+            if run_havelog:
+                screen.blit(self.font, (0, 0))
+                screen.blit(self.music, (5, 5))
+                screen.blit(self.text1, (60, height // 8.3))
+                screen.blit(self.text2, (420, height // 7.69))
+                screen.blit(self.text3, (210, height // 2.94))
+                screen.blit(self.text4, (165, height // 2.08))
+                screen.blit(self.text5, (145, height // 1.61))
+                pygame.display.flip()
 
 
 music_on = True
@@ -192,6 +286,7 @@ def music():
     pygame.mixer.music.play()
 
 
+
 def load_image(name, color_key=None):
     fullname = os.path.join("data", name)
     image = pygame.image.load(fullname).convert()
@@ -202,7 +297,6 @@ def load_image(name, color_key=None):
     else:
         image = image.convert_alpha()
     return image
-
 
 music_play = music()
 start = StartWindow()
