@@ -416,7 +416,7 @@ class Menu:
         self.ch = ch.render("Персонажи", 1, (112, 41, 99))
 
         play = pygame.font.SysFont("arial", 30)
-        self.play = play.render("Играть", 1, pygame.Color("lightblue"))
+        self.play = play.render("Играть", 1, (112, 41, 99))
 
         board_size = ''
 
@@ -440,23 +440,21 @@ class Menu:
                         board_size = 10
 
                         self.list_size[0] = [(162, 162, 208), 0]
-                        self.list_size[1], self.list_size[2] = [(255, 20, 147), 3],(255, 20, 147), 3]]
+                        self.list_size[1], self.list_size[2] = [(255, 20, 147), 3],[(255, 20, 147), 3]
 
                     if 265 <= event.pos[0] <= 335 and 165 <= event.pos[1] <= 215:
                         # print(15)
                         board_size = 15
 
                         self.list_size[1] = [(162, 162, 208), 0]
-                        self.list_size[0], self.list_size[2] =
-                        [(255, 20, 147), 3], [(255, 20, 147), 3]
+                        self.list_size[0], self.list_size[2] = [(255, 20, 147), 3], [(255, 20, 147), 3]
 
                     if 430 <= event.pos[0] <= 500 and 165 <= event.pos[1] <= 215:
                         #print(20)
                         board_size = 20
 
                         self.list_size[2] = [(162, 162, 208), 0]
-                        self.list_size[1], self.list_size[0] =
-                        [(255, 20, 147), 3], [(255, 20, 147), 3]
+                        self.list_size[1], self.list_size[0] = [(255, 20, 147), 3], [(255, 20, 147), 3]
 
                     if 90 <= event.pos[0] <= 210 and 295 <= event.pos[1] <= 345:
 
@@ -533,12 +531,12 @@ class Menu:
                 screen.blit(self.t_size, (width // 12, height // 4.16))   # (50, 120)
                 screen.blit(self.t_mode, (width // 12, height // 2))   # (50, 250)
                 screen.blit(self.t_char, (width // 12, height // 1.315))   # (50, 380)
-                pygame.draw.rect(screen, pygame.Color("blue"),
+                pygame.draw.rect(screen, (112, 41, 99),
                                  (width // 1.71, height // 1.35, width // 3.15,
                                   height // 12.5), 3)   # (350, 370, 190, 60)
                 screen.blit(self.ch, (width // 1.538, height // 1.315))   # (390, 380)
                 screen.blit(self.play, (width // 2.3, height // 1.162))   # (260, 430)
-                pygame.draw.rect(screen, pygame.Color("blue"),
+                pygame.draw.rect(screen, (112, 41, 99),
                                  (width // 15, height // 1.19, width // 1.153,
                                   height // 9), 3)   # (40, 420, 520, 55)
 
