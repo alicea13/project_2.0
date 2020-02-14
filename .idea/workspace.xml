@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb0fa578-e8bd-454a-8e0b-ffcd6d78555a" name="Default Changelist" comment="Изменения в классе HaveLogin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cb0fa578-e8bd-454a-8e0b-ffcd6d78555a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,12 +108,12 @@
       <option name="project" value="LOCAL" />
       <updated>1579819197615</updated>
     </task>
-    <task id="LOCAL-00003" summary="Доработка класса Game, Snake">
-      <created>1579132960267</created>
+    <task id="LOCAL-00003" summary="Class Board + Class Snake and Class Apples">
+      <created>1581687347388</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1579132960267</updated>
+      <updated>1581687347388</updated>
     </task>
     <task id="LOCAL-00004" summary="Удаляем музыку">
       <created>1579133970683</created>
@@ -130,7 +129,7 @@
       <option name="project" value="LOCAL" />
       <updated>1579134119434</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,25 +163,38 @@
     <MESSAGE value="Создана ветка feature/class_Character/9" />
     <MESSAGE value="Прорисовка спрайтов персонажей в классе Character на ветке feature/class_Character/9" />
     <MESSAGE value="Изменения в классе HaveLogin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменения в классе HaveLogin" />
+    <MESSAGE value="Class Board + Class Snake and Class Apples" />
+    <option name="LAST_COMMIT_MESSAGE" value="Class Board + Class Snake and Class Apples" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="931" height="280" key="GridCell.Tab.0.bottom" timestamp="1581687289241">
+    <state x="614" y="114" key="CommitChangelistDialog2" timestamp="1581687346213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="931" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581687289241" />
-    <state width="931" height="280" key="GridCell.Tab.0.center" timestamp="1581687289241">
+    <state x="614" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581687346213" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1581687527144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="931" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581687289241" />
-    <state width="931" height="280" key="GridCell.Tab.0.left" timestamp="1581687289241">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581687527144" />
+    <state width="931" height="280" key="GridCell.Tab.0.bottom" timestamp="1581687695576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="931" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581687289241" />
-    <state width="931" height="280" key="GridCell.Tab.0.right" timestamp="1581687289241">
+    <state width="931" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581687695576" />
+    <state width="931" height="280" key="GridCell.Tab.0.center" timestamp="1581687695576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="931" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581687289241" />
+    <state width="931" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581687695576" />
+    <state width="931" height="280" key="GridCell.Tab.0.left" timestamp="1581687695576">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="931" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581687695576" />
+    <state width="931" height="280" key="GridCell.Tab.0.right" timestamp="1581687695576">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="931" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581687695576" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581687728063">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581687728063" />
     <state x="612" y="189" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581686851664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

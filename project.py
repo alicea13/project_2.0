@@ -447,16 +447,14 @@ class Menu:
                         board_size = 15
 
                         self.list_size[1] = [(162, 162, 208), 0]
-                        self.list_size[0], self.list_size[2] =
-                        [(255, 20, 147), 3], [(255, 20, 147), 3]
+                        self.list_size[0], self.list_size[2] = [(255, 20, 147), 3], [(255, 20, 147), 3]
 
                     if 430 <= event.pos[0] <= 500 and 165 <= event.pos[1] <= 215:
                         #print(20)
                         board_size = 20
 
                         self.list_size[2] = [(162, 162, 208), 0]
-                        self.list_size[1], self.list_size[0] =
-                        [(255, 20, 147), 3], [(255, 20, 147), 3]
+                        self.list_size[1], self.list_size[0] = [(255, 20, 147), 3], [(255, 20, 147), 3]
 
                     if 90 <= event.pos[0] <= 210 and 295 <= event.pos[1] <= 345:
 
@@ -653,10 +651,11 @@ class Snake(Board):
 
                         for j in range(len):
                             body[j][0] += 10
-    def if_we_have_apple(self, head):
+    '''def if_we_have_apple(self, head):
         apple = Apple()
         x_cd, y_cd = head
         if x_cd == self.food_pos[0] and y_cd == self.pos[1]:
+            pass'''
 
 
         self.board = copy.deepcopy(temp)
