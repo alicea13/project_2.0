@@ -440,7 +440,7 @@ class Menu:
                         board_size = 10
 
                         self.list_size[0] = [(162, 162, 208), 0]
-                        self.list_size[1], self.list_size[2] = [(255, 20, 147), 3],(255, 20, 147), 3]]
+                        self.list_size[1], self.list_size[2] = [(255, 20, 147), 3], [(255, 20, 147), 3]
 
                     if 265 <= event.pos[0] <= 335 and 165 <= event.pos[1] <= 215:
                         # print(15)
@@ -544,6 +544,135 @@ class Menu:
 
                 pygame.display.flip()
         pygame.quit()
+
+class Board:
+    # создание поля
+    def __init__(self, screen, width, height, cell_count=10):
+
+        self.width = width
+        self.height = height
+        # значения по умолчанию
+        self.cell_size = 30   # (width - 120) // cell_count; width // int(cell_count)
+        size = width, height = 800, 700
+        self.screen = screen
+        self.cell_c = cell_count
+        self.board = [[0] * cell_count for _ in range(cell_count)]
+
+        self.left = (width - self.cell_size * self.cell_c) // 2
+        self.top = (width - self.cell_size * self.cell_c) // 5
+
+
+
+    def render(self):
+        for i in range(self.cell_c):
+            for j in range(self.cell_c):
+                pygame.draw.rect(self.screen, pygame.Color("white"),
+                                 ((self.left + self.cell_size * i,
+                                   self.top + self.cell_size * j),
+                                  (self.cell_size, self.cell_size)), 1)
+
+    def get_cell(self, mouse_pos):
+        if (self.left <= mouse_pos[0] <= self.left + self.cell_size * self.width and
+                self.top <= mouse_pos[1] <= self.top + self.cell_size * self.height):
+            y = (mouse_pos[0] - self.left) // self.cell_size
+            x = (mouse_pos[1] - self.top) // self.cell_size
+            return x, y
+        else:
+            return None
+
+    def get_click(self, mouse_pos):
+        cell = self.get_cell(mouse_pos)
+        self.board[cell[0]][cell[1]] = 1
+
+class Snake(Board):
+    def __init__(self, screen, width, height, cell_count=10):
+        super().__init__(screen, width, height, cell_count)
+        self.screen = screen
+
+        self.cell_c = cell_count
+
+    def render(self):
+        for x in range(self.cell_c):
+            for y in range(self.cell_c):
+                if self.board[y][x] == 1:
+                    pygame.draw.rect(self.screen, pygame.Color("yellow"),
+                                     (self.left + self.cell_size * x,
+                                      self.top + self.cell_size * y,
+                                      self.cell_size, self.cell_size))
+                # отрисовываем решетку поля
+                pygame.draw.rect(self.screen, pygame.Color("blue"),
+                                 (self.left + self.cell_size * x,
+                                  self.top + self.cell_size * y,
+                                  self.cell_size, self.cell_size), 1)
+
+    def next_move(self, head, len, body, cell, c_dir='right'):
+        x_cd, y_cd = head
+        temp = copy.deepcopy(self.board)  # сохраняем поле для дальнейшего изменения текущего
+
+        self.c_dir = c_dir
+        #print("step", self.c_dir)
+
+        for x in range(self.width):
+            for y in range(self.height):
+
+                if -1 < y_cd < cell - 1 and -1 < x_cd < cell - 1:
+                    if self.c_dir == "right" and temp[x_cd][y_cd + 1] == 0:
+                        for i in range(len):
+
+                            #print(temp[body[i][0]][body[i][1] + 1])
+                            #print(temp[body[-1][0]][body[-1][1]])
+
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0]][body[i][1] + 1] = 1
+                        for j in range(len):
+                            body[j][1] += 10
+
+                    if self.c_dir == "left" and temp[x_cd][y_cd - 1] == 0:
+                        for i in range(len):
+                            #print(temp[body[i][0]][body[i][1] - 1])
+                            #print(temp[body[-1][0]][body[-1][1]])
+
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0]][body[i][1] - 1] = 1
+
+                        for j in range(len):
+                            body[j][1] -= 10
+
+                    if self.c_dir == "up" and temp[x_cd - 1][y_cd] == 0:
+                        for i in range(len):
+
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0] - 1][body[i][1]] = 1
+                        for j in range(len):
+                            body[j][0] -= 10
+
+                    if self.c_dir == "down" and temp[x_cd + 1][y_cd] == 0:
+                        for i in range(len):
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0] + 1][body[i][1]] = 1
+
+                        for j in range(len):
+                            body[j][0] += 10
+    def if_we_have_apple(self, head):
+        apple = Apple()
+        x_cd, y_cd = head
+        if x_cd == self.food_pos[0] and y_cd == self.pos[1]:
+
+
+        self.board = copy.deepcopy(temp)
+
+class Apple():
+    def __init__(self, food_color, screen_width, screen_height):
+        self.food_pos = food_pos
+        self.food_sizex = 20
+        self.food_sizey = 20
+        self.food_pos = [random.randrange(1, screen_width / 10) * 10, random.randrange(1, screen_height/10)*10]
+
+    def draw_food(self):
+        board = Board()
+        pygame.draw.rect(board, self.food_color,
+                         pygame.Rect(self.food_pos[0], self.food_pos[1],
+                                     self.food_sizex, self.food_sizey))
 
 
 
