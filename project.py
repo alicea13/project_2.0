@@ -237,7 +237,7 @@ class HaveLogin:
                         print("game")
 
                         # открытие окна меню
-                        #Menu(self.log)
+                        Menu(self.log)
 
                         run_havelog = False
                     if 160 <= event.pos[0] <= 450 and 230 <= event.pos[1] <= 283:
@@ -356,6 +356,193 @@ class NoLogin:
 
                 pygame.display.flip()
 
+        pygame.quit()
+
+
+class Menu:
+    def __init__(self, log):
+        global music_on
+        super().__init__()
+        pygame.init()
+
+        self.login = log
+        size = width, height = 600, 500
+        screen = pygame.display.set_mode(size)
+
+        self.sound = pygame.mixer.Sound("music/click_sound_cut2.wav")
+        text_before = pygame.font.SysFont("arial", 36)
+
+        self.font = pygame.transform.scale(load_image('font_2.jpg'), (width, height))
+        self.music = pygame.transform.scale(load_image('music_2.png', -1), (60, 60))
+
+        titl = pygame.font.SysFont('arial', 40)
+        self.titl = text_before.render("Перед началом игры", 1, (153, 0, 102))
+
+        act_open = pygame.font.SysFont("arial", 30, bold=True)
+        self.text3 = act_open.render(f"Начать игру", 1, (189, 51, 164))
+
+
+        text_size = pygame.font.SysFont("arial", 25)
+        self.t_size = text_size.render("Выберите размер поля :", 1, (189, 51, 164))
+
+        size_10 = pygame.font.SysFont("colibri", 25)
+        self.size_10 = size_10.render("10x10", 1, (112, 41, 99))
+
+        size_20 = pygame.font.SysFont("colibri", 25)
+        self.size_20 = size_20.render("15x15", 1, (112, 41, 99))
+
+        size_30 = pygame.font.SysFont("colibri", 25)
+        self.size_30 = size_30.render("20x20", 1, (112, 41, 99))
+
+        text_mode = pygame.font.SysFont("arial", 25)
+        self.t_mode = text_mode.render("Выберите режим игры :", 1, (189, 51, 164))
+
+        mode_food = pygame.font.SysFont("colibri", 25)
+        self.m_food = mode_food.render("еда", 1, (112, 41, 99))
+        self.f_col = (223, 115, 255)
+
+        mode_speed = pygame.font.SysFont("colibri", 25)
+        self.m_speed = mode_speed.render("скорость", 1, (112, 41, 99))
+        self.s_col = (223, 115, 255)
+
+        mode_barrier = pygame.font.SysFont("colibri", 25)
+        self.m_barrier = mode_barrier.render("препятствия", 1, (112, 41, 99))
+        self.b_col = (223, 115, 255)
+
+        text_character = pygame.font.SysFont("arial", 25)
+        self.t_char = text_character.render("Выберите персонажа :", 1, (189, 51, 164))
+
+        ch = pygame.font.SysFont("colibri", 30)
+        self.ch = ch.render("Персонажи", 1, (112, 41, 99))
+
+        play = pygame.font.SysFont("arial", 30)
+        self.play = play.render("Играть", 1, pygame.Color("lightblue"))
+
+        board_size = ''
+
+        self.list_mode = [[(255, 20, 147), 3], [(255, 20, 147), 3], [(255, 20, 147), 3]]
+        self.list_size = [[(83, 26, 80), 3], [(83, 26, 80), 3], [(83, 26, 80), 3]]
+
+        self.size_list = [self.size_10, self.size_20, self.size_30]
+        self.mode_list = [self.m_barrier, self.m_speed, self.m_food]
+        self.game_mode = []
+        run_menu = True
+
+        while run_menu:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    run_menu = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    self.sound.play()
+                    print(event.pos)
+                    if 100 <= event.pos[0] <= 170 and 165 <= event.pos[1] <= 215:
+                        #print(10)
+                        board_size = 10
+
+                        self.list_size[0] = [(162, 162, 208), 0]
+                        self.list_size[1], self.list_size[2] = [(255, 20, 147), 3],(255, 20, 147), 3]]
+
+                    if 265 <= event.pos[0] <= 335 and 165 <= event.pos[1] <= 215:
+                        # print(15)
+                        board_size = 15
+
+                        self.list_size[1] = [(162, 162, 208), 0]
+                        self.list_size[0], self.list_size[2] =
+                        [(255, 20, 147), 3], [(255, 20, 147), 3]
+
+                    if 430 <= event.pos[0] <= 500 and 165 <= event.pos[1] <= 215:
+                        #print(20)
+                        board_size = 20
+
+                        self.list_size[2] = [(162, 162, 208), 0]
+                        self.list_size[1], self.list_size[0] =
+                        [(255, 20, 147), 3], [(255, 20, 147), 3]
+
+                    if 90 <= event.pos[0] <= 210 and 295 <= event.pos[1] <= 345:
+
+                        if "препятствия" not in self.game_mode:
+                            self.game_mode.append("препятствия")
+                            self.list_mode[0] = [(162, 162, 208), 0]
+                        else:
+                            self.game_mode.pop(self.game_mode.index("препятствия"))
+                            self.list_mode[0] = [(255, 20, 147), 3]
+                        #print(self.game_mode)
+                        #print("barrier")
+
+                        # game_mode = "препятствия"
+
+                    if 240 <= event.pos[0] <= 360 and 295 <= event.pos[1] <= 345:
+
+                        if "скорость" not in self.game_mode:
+                            self.game_mode.append("скорость")
+                            self.list_mode[1] = [(162, 162, 208), 0]
+                        else:
+                            self.game_mode.pop(self.game_mode.index("скорость"))
+                            self.list_mode[1] = [(255, 20, 147), 3]
+                        #print(self.game_mode)
+                        #print("speed")
+
+                        #game_mode = "скорость"
+
+                    if 390 <= event.pos[0] <= 510 and 295 <+ event.pos[1] <= 345:
+
+                        if "еда" not in self.game_mode:
+                            self.game_mode.append("еда")
+                            self.list_mode[2] = [(162, 162, 208), 0]
+                        else:
+                            self.game_mode.pop(self.game_mode.index("еда"))
+                            self.list_mode[2] = [(255, 20, 147), 3]
+
+                        #print(self.game_mode)
+                        #print("food")
+
+                        game_mode = "еда"
+
+                    if 350 <= event.pos[0] <= 540 and 370 <= event.pos[1] <= 400:
+                        print("barrier menu")
+                        #Character(self.login)
+
+                    if 40 <= event.pos[0] <= 560 and 420 <= event.pos[1] <= 475:
+                        print("play")
+                        #Game(self.login, self.game_mode, board_size)
+
+                    if 5 <= event.pos[0] <= 65 and 5 <= event.pos[1] <= 65 and music_on:
+                        pygame.mixer.music.pause()
+                        music_on = False
+                        continue
+
+                    if 5 <= event.pos[0] <= 65 and 5 <= event.pos[1] <= 65 and not music_on:
+                        pygame.mixer.music.unpause()
+                        music_on = True
+
+            if run_menu is True:
+                screen.blit(self.font, (0, 0))
+                screen.blit(self.music, (5, 5))
+                for i in range(3):
+                    pygame.draw.rect(screen, self.list_size[i][0],
+                                     (100 + i * 165, 165, 70, 50), self.list_size[i][1])
+
+                    screen.blit(self.size_list[i], (110 + i * 165, 180))
+
+                    pygame.draw.rect(screen, self.list_mode[i][0],
+                                     (90 + i * 150, 295, 120, 50 ),
+                                     self.list_mode[i][1])
+                    screen.blit(self.mode_list[i], (100 + i * 166, 310))
+
+                screen.blit(self.titl, (width // 4.28, height // 10))   # (140, 50)
+                screen.blit(self.t_size, (width // 12, height // 4.16))   # (50, 120)
+                screen.blit(self.t_mode, (width // 12, height // 2))   # (50, 250)
+                screen.blit(self.t_char, (width // 12, height // 1.315))   # (50, 380)
+                pygame.draw.rect(screen, pygame.Color("blue"),
+                                 (width // 1.71, height // 1.35, width // 3.15,
+                                  height // 12.5), 3)   # (350, 370, 190, 60)
+                screen.blit(self.ch, (width // 1.538, height // 1.315))   # (390, 380)
+                screen.blit(self.play, (width // 2.3, height // 1.162))   # (260, 430)
+                pygame.draw.rect(screen, pygame.Color("blue"),
+                                 (width // 15, height // 1.19, width // 1.153,
+                                  height // 9), 3)   # (40, 420, 520, 55)
+
+                pygame.display.flip()
         pygame.quit()
 
 
