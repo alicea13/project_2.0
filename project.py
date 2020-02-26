@@ -1,6 +1,7 @@
 import pygame, os, random
 import sys
 import sqlite3
+import random
 import copy
 
 
@@ -547,6 +548,246 @@ class Menu:
 
 music_on = True
 
+class Board:
+    # создание поля
+    def __init__(self, screen, width, height, cell_count=10):
+
+        self.width = width
+        self.height = height
+        # значения по умолчанию
+        self.cell_size = 30  # (width - 120) // cell_count; width // int(cell_count)
+        size = width, height = 800, 700
+        self.screen = screen
+        self.cell_c = cell_count
+        self.board = [[0] * cell_count for _ in range(cell_count)]
+
+        self.left = (width - self.cell_size * self.cell_c) // 2
+        self.top = (width - self.cell_size * self.cell_c) // 5
+
+    def render(self):
+        for i in range(self.cell_c):
+            for j in range(self.cell_c):
+                pygame.draw.rect(self.screen, pygame.Color("white"),
+                                 ((self.left + self.cell_size * i,
+                                   self.top + self.cell_size * j),
+                                  (self.cell_size, self.cell_size)), 1)
+
+    def get_cell(self, mouse_pos):
+        if (self.left <= mouse_pos[0] <= self.left + self.cell_size * self.width and
+                self.top <= mouse_pos[1] <= self.top + self.cell_size * self.height):
+            y = (mouse_pos[0] - self.left) // self.cell_size
+            x = (mouse_pos[1] - self.top) // self.cell_size
+            return x, y
+        else:
+            return None
+
+    def get_click(self, mouse_pos):
+        cell = self.get_cell(mouse_pos)
+        self.board[cell[0]][cell[1]] = 1
+
+
+class Game:
+    def __init__(self, login, mode, cell_count=10):
+        '''print()
+        print("mode", mode)
+        print("login", login)
+        print("cell_count", cell_count)'''
+
+        pygame.init()
+        size = width, height = 800, 700
+        screen = pygame.display.set_mode(size)
+
+        board = Board(screen, width, height, cell_count)  # создаем поле
+        clock = pygame.time.Clock()
+        board = Snake(screen, width, height, cell_count)
+
+        running_game = True
+        snake_run = False
+
+        clock = pygame.time.Clock()
+        ticks = 0
+        speed = 110
+        # speed_2 = 0
+
+        self.c_dir = None
+        self.l_dir = None
+        self.len = 1
+        self.body_coord = []
+
+        self.head_cell = [0, 0]
+        self.end_cell = [0, 0]
+
+        while running_game:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running_game = False
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    self.sound.play()
+                    if not self.body_coord:
+                        board.get_click(event.pos)
+                        # self.head_cell = list(board.get_cell(event.pos))
+                        # self.end_cell = list(board.get_cell(event.pos))
+                        # self.body_coord.append(list(board.get_cell(event.pos)))
+
+                        self.head_cell = list(board.get_cell(event.pos))
+                        self.end_cell = list(board.get_cell(event.pos))
+                        self.body_coord.append(list(board.get_cell(event.pos), None))
+
+                    '''else:
+                        #self.end_cell = list(board.get_cell(event.pos))
+                        #self.body_coord.append(list(board.get_cell(event.pos)))
+                        self.len += 1
+                    print(f'head {self.head_cell}')
+                    print(f'end {self.end_cell}')
+                    print(f'body {self.body_coord}')'''
+
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE or
+                        event.type == pygame.MOUSEBUTTONDOWN and event.button == 3):
+                    snake_run = not snake_run
+
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN):
+                    if self.l_dir is None:
+                        self.c_dir = "down"
+                        self.l_dir = "down"
+                        print(self.c_dir)
+                    else:
+                        if self.c_dir != "up":
+                            self.c_dir = "down"
+
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_UP):
+                    if self.l_dir is None:
+                        self.c_dir = "up"
+                        self.l_dir = "up"
+                    else:
+                        if self.c_dir != "down":
+                            self.c_dir = "up"
+
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT):
+                    if self.l_dir is None:
+                        self.c_dir = "left"
+                        self.l_dir = "left"
+                    else:
+                        if self.c_dir != "right":
+                            self.c_dir = "left"
+
+                if (event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT):
+                    if self.l_dir is None:
+                        self.c_dir = "right"
+                        self.l_dir = "right"
+                    else:
+                        if self.c_dir != "left":
+                            self.c_dir = "right"
+
+            screen.fill((0, 0, 0))
+            board.render()
+            if ticks >= speed:
+
+                if snake_run:
+                    board.next_move(self.head_cell, self.len, self.body_coord,
+                                    cell_count, self.c_dir)
+                    if self.c_dir == "right":
+                        self.head_cell[1] += 1
+                        self.end_cell[1] += 1
+                    if self.c_dir == "left":
+                        self.head_cell[1] -= 1
+                        self.end_cell[1] -= 1
+                    if self.c_dir == "up":
+                        self.head_cell[0] -= 1
+                        self.end_cell[0] -= 1
+                    if self.c_dir == "down":
+                        self.head_cell[0] += 1
+                        self.end_cell[0] += 1
+                tick = 0
+            pygame.display.flip()
+            clock.tick(100)
+            ticks += 1
+        pygame.quit()
+
+all_sprites = pygame.sprite.Group()
+tiles_group = pygame.sprite.Group()
+player_group = pygame.sprite.Group()
+
+
+class Snake():
+    def __init__(self, screen, width, height, cell_count=10):
+        super().__init__(screen, width, height, cell_count)
+        self.screen = screen
+
+        self.cell_c = cell_count
+
+    def render(self):
+        for x in range(self.cell_c):
+            for y in range(self.cell_c):
+                if self.board[y][x] == 1:
+                    pygame.draw.rect(self.screen, pygame.Color("yellow"),
+                                     (self.left + self.cell_size * x,
+                                      self.top + self.cell_size * y,
+                                      self.cell_size, self.cell_size))
+                # отрисовываем решетку поля
+                pygame.draw.rect(self.screen, pygame.Color("blue"),
+                                 (self.left + self.cell_size * x,
+                                  self.top + self.cell_size * y,
+                                  self.cell_size, self.cell_size), 1)
+
+    def next_move(self, head, len, body, cell, c_dir='right'):
+        x_cd, y_cd = head
+        temp = copy.deepcopy(self.board)  # сохраняем поле для дальнейшего изменения текущего
+
+        self.c_dir = c_dir
+        # print("step", self.c_dir)
+
+        for x in range(self.width):
+            for y in range(self.height):
+
+                if -1 < y_cd < cell - 1 and -1 < x_cd < cell - 1:
+                    if self.c_dir == "right" and temp[x_cd][y_cd + 1] == 0:
+                        for i in range(len):
+                            # print(temp[body[i][0]][body[i][1] + 1])
+                            # print(temp[body[-1][0]][body[-1][1]])
+
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0]][body[i][1] + 1] = 1
+                        for j in range(len):
+                            body[j][1] += 1
+
+                    if self.c_dir == "left" and temp[x_cd][y_cd - 1] == 0:
+                        for i in range(len):
+                            # print(temp[body[i][0]][body[i][1] - 1])
+                            # print(temp[body[-1][0]][body[-1][1]])
+
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0]][body[i][1] - 1] = 1
+
+                        for j in range(len):
+                            body[j][1] -= 1
+
+                    if self.c_dir == "up" and temp[x_cd - 1][y_cd] == 0:
+                        for i in range(len):
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0] - 1][body[i][1]] = 1
+                        for j in range(len):
+                            body[j][0] -= 1
+
+                    if self.c_dir == "down" and temp[x_cd + 1][y_cd] == 0:
+                        for i in range(len):
+                            temp[body[-1][0]][body[-1][1]] = 0
+                            temp[body[i][0] + 1][body[i][1]] = 1
+
+                        for j in range(len):
+                            body[j][0] += 1
+
+
+        self.board = copy.deepcopy(temp)
+
+class Bomb(pygame.sprite.Sprite):
+    board = Board()
+    def __init__(self, screen, width, height):
+        super().__init__(screen, width, height)
+
+class GetApples():
+    def __init__(self):
+        pass
+
 
 def music():
     pygame.init()
@@ -569,6 +810,9 @@ def load_image(name, color_key=None):
 
 music_play = music()
 start = StartWindow()
+snake = Snake()
+
+
 
 
 # меню с настройками #
